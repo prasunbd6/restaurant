@@ -1,0 +1,144 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+
+  "menu": [
+    {
+      "id": 1,
+      "title": "Fried Rice + Egg",
+      "category": "breakfast",
+      "price": "40",
+      "img": "https://www.pexels.com/photo/sliced-cucumber-and-tomatoes-on-white-ceramic-bowl-6823326/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 2,
+      "title": "Bread + Egg",
+      "category": "breakfast",
+      "price": "50",
+      "img": "https://www.pexels.com/photo/sliced-egg-on-top-of-green-salad-with-bread-824635/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 3,
+      "title": "Egg Curry",
+      "category": "breakfast",
+      "price": "30",
+      "img": "https://www.pexels.com/photo/food-photography-of-cooked-eggs-and-meat-2067470/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 4,
+      "title": "burger with sunny",
+      "category": "breakfast",
+      "price": "80",
+      "img": "https://www.pexels.com/photo/burger-with-sunny-side-up-on-white-surface-2293537/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 5,
+      "title": "bottle of juice",
+      "category": "juice",
+      "price": "35",
+      "img": "https://www.pexels.com/photo/fruit-and-bottle-of-juice-on-table-6331200/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 6,
+      "title": "Green liquid",
+      "category": "juice",
+      "price": "40",
+      "img": "https://www.pexels.com/photo/a-person-pouring-green-liquid-in-the-clear-glass-4443437/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 7,
+      "title": "Glass with-orange",
+      "category": "juice",
+      "price": "44",
+      "img": "https://www.pexels.com/photo/drink-poured-into-glass-with-orange-pieces-5947076/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 8,
+      "title": "Pineapple juice",
+      "category": "juice",
+      "price": "44",
+      "img": "https://www.pexels.com/photo/an-orange-and-pineapple-juice-in-glass-bottles-8679340/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 9,
+      "title": "Pasta",
+      "category": "Lunch",
+      "price": "300",
+      "img": "https://www.pexels.com/photo/selective-focus-photography-of-pasta-with-tomato-and-basil-1279330/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 10,
+      "title": "Vegetable Salad",
+      "category": "Lunch",
+      "price": "247",
+      "img": "https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 11,
+      "title": "Brown cooked dish",
+      "category": "Lunch",
+      "price": "250",
+      "img": "https://www.pexels.com/photo/white-and-brown-cooked-dish-on-white-ceramic-bowls-958545/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 12,
+      "title": "barbecue",
+      "category": "Lunch",
+      "price": "120",
+      "img": "https://www.pexels.com/photo/barbecue-bbq-delicious-dinner-3690/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 13,
+      "title": "dinnerware",
+      "category": "dinner",
+      "price": "480",
+      "img": "https://www.pexels.com/photo/dinnerware-set-on-brown-wooden-table-262882/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 14,
+      "title": "bruschetta",
+      "category": "dinner",
+      "price": "220",
+      "img": "https://www.pexels.com/photo/woman-eating-bruschetta-1537635/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 15,
+      "title": "steak",
+      "category": "dinner",
+      "price": "220",
+      "img": "https://www.pexels.com/photo/steak-food-769289/",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    }
+  ],
+
+  "profile": {
+    "name": "typicode"
+  }
+}
