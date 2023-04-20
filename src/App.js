@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Layout/Header";
 import Navbar from "./Layout/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
@@ -11,7 +10,7 @@ const App = () => {
   
   return (
     <>
-      <Header/>
+      
       <Navbar/>
       <Routes>
       <Route path="/" element={<Home/>}></Route>

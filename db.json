@@ -18,18 +18,18 @@
   "category":[
     {
       "id":1,
-      "cat_name":"Lunch"
-    },
-    {
-      "id":2,
       "cat_name":"Breakfast"
     },
     {
       "id":3,
-      "cat_name":"Dinner"
+      "cat_name":"Lunch"
     },
     {
       "id":4,
+      "cat_name":"Dinner"
+    },
+    {
+      "id":2,
       "cat_name":"Juice"
     }
     
@@ -45,7 +45,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 2,
+      "id": 5,
       "title": "Bread + Egg",
       "category": "Breakfast",
       "price": "50",
@@ -61,7 +61,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "burger with sunny",
       "category": "Breakfast",
       "price": "80",
@@ -69,7 +69,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 5,
+      "id": 2,
       "title": "bottle of Juice",
       "category": "Juice",
       "price": "35",
@@ -77,7 +77,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 6,
+      "id": 4,
       "title": "Green liquid",
       "category": "Juice",
       "price": "40",
@@ -93,7 +93,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "Pineapple Juice",
       "category": "Juice",
       "price": "44",
@@ -101,7 +101,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Pasta",
       "category": "Lunch",
       "price": "300",
@@ -109,7 +109,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 10,
+      "id": 8,
       "title": "Vegetable Salad",
       "category": "Lunch",
       "price": "247",
@@ -125,7 +125,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 12,
+      "id": 13,
       "title": "barbecue",
       "category": "Lunch",
       "price": "120",
@@ -133,7 +133,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 13,
+      "id": 14,
       "title": "Dinnerware",
       "category": "Dinner",
       "price": "480",
@@ -141,7 +141,7 @@
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-      "id": 14,
+      "id": 12,
       "title": "bruschetta",
       "category": "Dinner",
       "price": "220",

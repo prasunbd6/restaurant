@@ -1,0 +1,84 @@
+/* Webpage Scroll bar*/
+::-webkit-scrollbar{
+  width: .8rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(238, 233, 241, 0.267);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(206, 204, 209);
+  border-radius: 1rem;
+  border: 0.2rem solid transparent;
+  background-clip: content-box;
+
+}
+::-webkit-scrollbar-thumb:hover{
+background-color: rgb(55, 66, 64);
+}
+
+
+/* Page Transition*/
+
+@keyframes transitionIn {
+    from {
+      opacity: 0;
+      transform: rotate(-0.2deg);
+    }
+  
+    to {
+      opacity: 6;
+      transform: rotate(0);
+    }
+  }
+  
+  .container {
+    animation: transitionIn 1s;
+  }
+  
+  .col {
+    animation: transitionIn 1s;
+  }
+  
+  .row {
+    animation: transitionIn 1s;
+  }
+  
+  .table {
+    animation: transitionIn 1s;
+  }
+  
+  .container-fluid {
+    animation: transitionIn 0.75s;
+  }
+  
+  /* Service Page Transition (Hover box)*/
+  
+  .card {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 11px 8px rgba(0, 0, 0, 0.22);
+    animation: transitionIn 1s;
+    transition-duration: 0.5s;
+  }
+  
+  .card > img {
+    height: 200px;
+    
+  }
+
+  .card > p {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  /* <p> tag scroll effect*/
+  .text-overflow{
+    overflow-y: scroll;
+    height: 60px;
+    width:auto;
+  }
+  
+  .card:hover {
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3), 0 14px 11px rgba(0, 0, 0, 0.22);
+    background-color: rgb(222, 192, 230);
+  }
+  
