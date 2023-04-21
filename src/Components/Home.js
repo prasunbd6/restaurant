@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import logo from "../images/logo.jpg";
+//import logo from "../images/logo.jpg";
 import axios from "axios";
 import { PacmanLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const [apiCatData, setApiCatData] = useState([]); // Catch Category from Database
@@ -15,7 +16,6 @@ const Home = () => {
       setLoading(false);
     }, 4000);
   };
-
 
   const filterItems = (curritems) => {
     //console.log(curritems)
@@ -50,7 +50,7 @@ const Home = () => {
   useEffect(() => {
     categoryData();
     menu();
-   // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const Home = () => {
 
   return (
     <>
-      {/* Logo */}
+      {/* Logo 
       <div className="container-fluid mt-1">
         <div className="row justify-content-md-center">
           <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -75,6 +75,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      */}
 
       {/* Food Menu Category*/}
       <div className="container-fluid mt-5">
@@ -82,11 +83,24 @@ const Home = () => {
           <div className="col-lg-5 col-sm-6 col-md-6 col-xs-12">
             <nav className="navbar bg-body-tertiary">
               <div className="container-fluid">
-                <button className="nav-link btn btn-lg text-danger fs-3" onClick={showAllItems} > All </button>
+                <button
+                  className="nav-link btn btn-lg text-danger Sedgwick-font fs-3"
+                  onClick={showAllItems}
+                >
+                  {" "}
+                  All{" "}
+                </button>
                 {apiCatData.map((cat) => {
                   return (
                     <>
-                      <button className="nav-link btn btn-lg text-danger fs-3" onClick={() => filterItems(cat.cat_name)} key={cat.id} > {cat.cat_name} </button>
+                      <button
+                        className="nav-link btn btn-lg text-danger Sedgwick-font fs-3"
+                        onClick={() => filterItems(cat.cat_name)}
+                        key={cat.id}
+                      >
+                        {" "}
+                        {cat.cat_name}{" "}
+                      </button>
                     </>
                   );
                 })}
@@ -98,61 +112,47 @@ const Home = () => {
 
       {/* Fetch Data by Category*/}
 
-      
-
-      {loading ? (<PacmanLoader
-        color="#7277bf"
-        height={20}
-        margin={0.5}
-        radius={2}
-        speedMultiplier={1}
-        width={5}
-      />):(
-      
+      {loading ? (
+        <PacmanLoader
+          color="#7277bf" height={20} margin={0.5} radius={2} speedMultiplier={1} width={5} />
+      ) : (
         <div className="container">
-        <div className="row">
-          {filteredData.map((menu) => {
-            return (
-              <>
-                {/* Card  Start*/}
-                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mt-3">
-                  <div className="card">
-                    <img
-                      src={menu.img}
-                      className="card-img-top"
-                      alt="..."
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">Title: {menu.title}</h5>
-                      <p className="card-text text-danger">
-                        {" "}
-                        Category:{" "}
-                        <b className="text-primary">{menu.category}</b>
-                      </p>
-                      <p className="card-text text-overflow">
-                        Description: {menu.description}
-                      </p>
-                      <span className="badge rounded-pill bg-secondary fs-10">
-                        {" "}
-                        Price (TK.): {menu.price}
-                      </span>
-                      <button className="btn btn-warning btn-sm mt-2 mb-2 mx-2 position-absolute bottom-0 end-0">
-                        {" "}
-                        Order{" "}
-                      </button>
+          <div className="row">
+            {filteredData.map((menu) => {
+              return (
+                <>
+                  {/* Card  Start*/}
+                  <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mt-3">
+                    <div className="card">
+                      <img src={menu.img} className="card-img-top" alt="..." />
+                      <div className="card-body">
+                        <h5 className="card-title">Title: {menu.title}</h5>
+                        <p className="card-text text-danger">
+                          {" "}
+                          Category:{" "}
+                          <b className="text-primary">{menu.category}</b>
+                        </p>
+                        <p className="card-text text-overflow">
+                          Description: {menu.description}
+                        </p>
+                        <span className="badge rounded-pill bg-secondary fs-10">
+                          {" "}
+                          Price (TK.): {menu.price}
+                        </span>
+                        <NavLink to={`/order/${menu.id}`} className="btn btn-warning btn-sm mt-2 mb-2 mx-2 position-absolute bottom-0 end-0">
+                          
+                          Order
+                        </NavLink>
+                      </div>
                     </div>
                   </div>
-                </div>
-                {/* Card  Close*/}
-              </>
-            );
-          })}
-          
+                  {/* Card  Close*/}
+                </>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      )} 
-      
-
+      )}
     </>
   );
 };
