@@ -13,7 +13,7 @@ import {IoLogoWhatsapp} from "react-icons/io"
 const Footer = () => {
   return (
     <>
-      <div className="container-fluid bg-light mt-4 mb-4">
+      <div className="container-fluid bg-light mt-5 mb-4">
         <div className="row justify-content-center">
           {/* Logo */}
           <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 ">

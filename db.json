@@ -1,45 +1,126 @@
 {
-  "posts": [
+  "admin": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "ad_name": "admin",
+      "ad_email": "admin@admin.com",
+      "ad_password": "admin"
     }
   ],
-
-  "comments": [
+  "user": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "u_name": "prasunbd6",
+      "u_email": "prasunbd6@gmail.com",
+      "u_password": "prasunbd6",
+      "u_mobile": "01711194288"
     }
   ],
-
-  "category":[
+  "cart": [
     {
-      "id":1,
-      "cat_name":"Breakfast"
-    },
-    {
-      "id":3,
-      "cat_name":"Lunch"
-    },
-    {
-      "id":4,
-      "cat_name":"Dinner"
-    },
-    {
-      "id":2,
-      "cat_name":"Juice"
+      "id": 1,
+      "user_id": 1
     }
-    
   ],
-
+  "cart_list": [
+    {
+      "menu_id": 5,
+      "quantity": "1",
+      "amount": 50,
+      "id": 1
+    },
+    {
+      "cat_id": 2,
+      "menu_id": 2,
+      "quantity": "3",
+      "amount": 105,
+      "id": 2
+    },
+    {
+      "menu_id": 13,
+      "quantity": "3",
+      "amount": 360,
+      "id": 3
+    },
+    {
+      "menu_id": 12,
+      "quantity": "3",
+      "amount": 660,
+      "id": 4
+    },
+    {
+      "cat_id": 3,
+      "menu_id": 3,
+      "quantity": "4",
+      "amount": 120,
+      "id": 5
+    },
+    {
+      "cat_id": 3,
+      "menu_id": 3,
+      "quantity": "5",
+      "amount": 150,
+      "id": 6
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Breakfast"
+    },
+    {
+      "id": 2,
+      "name": "Juice"
+    },
+    {
+      "id": 3,
+      "name": "Lunch"
+    },
+    {
+      "id": 4,
+      "name": "Dinner"
+    }
+  ],
+  "mymenu": [
+    {
+      "id": 1,
+      "title": "Fried Rice + Egg",
+      "category_id": 1,
+      "price": "40",
+      "img": "https://images.pexels.com/photos/6823326/pexels-photo-6823326.jpeg",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 5,
+      "title": "Bread + Egg",
+      "category_id": 2,
+      "price": "50",
+      "img": "https://images.pexels.com/photos/824635/pexels-photo-824635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 2,
+      "title": "bottle of Juice",
+      "category_id": 4,
+      "price": "35",
+      "img": "https://images.pexels.com/photos/6331200/pexels-photo-6331200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "id": 10,
+      "title": "Pasta",
+      "category_id": 3,
+      "price": "300",
+      "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    }
+  ],
   "menu": [
     {
       "id": 1,
       "title": "Fried Rice + Egg",
       "category": "Breakfast",
+      "cat_id": 1,
       "price": "40",
       "img": "https://images.pexels.com/photos/6823326/pexels-photo-6823326.jpeg",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -48,6 +129,7 @@
       "id": 5,
       "title": "Bread + Egg",
       "category": "Breakfast",
+      "cat_id": 1,
       "price": "50",
       "img": "https://images.pexels.com/photos/824635/pexels-photo-824635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -56,6 +138,7 @@
       "id": 3,
       "title": "Egg Curry",
       "category": "Breakfast",
+      "cat_id": 1,
       "price": "30",
       "img": "https://images.pexels.com/photos/2067470/pexels-photo-2067470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -64,6 +147,7 @@
       "id": 6,
       "title": "burger with sunny",
       "category": "Breakfast",
+      "cat_id": 1,
       "price": "80",
       "img": "https://images.pexels.com/photos/2293537/pexels-photo-2293537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -72,6 +156,7 @@
       "id": 2,
       "title": "bottle of Juice",
       "category": "Juice",
+      "cat_id": 2,
       "price": "35",
       "img": "https://images.pexels.com/photos/6331200/pexels-photo-6331200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -80,6 +165,7 @@
       "id": 4,
       "title": "Green liquid",
       "category": "Juice",
+      "cat_id": 2,
       "price": "40",
       "img": "https://images.pexels.com/photos/4443437/pexels-photo-4443437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -88,6 +174,7 @@
       "id": 7,
       "title": "Glass with-orange",
       "category": "Juice",
+      "cat_id": 2,
       "price": "44",
       "img": "https://images.pexels.com/photos/5947076/pexels-photo-5947076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -96,6 +183,7 @@
       "id": 9,
       "title": "Pineapple Juice",
       "category": "Juice",
+      "cat_id": 2,
       "price": "44",
       "img": "https://images.pexels.com/photos/8679340/pexels-photo-8679340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -104,6 +192,7 @@
       "id": 10,
       "title": "Pasta",
       "category": "Lunch",
+      "cat_id": 3,
       "price": "300",
       "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -112,6 +201,7 @@
       "id": 8,
       "title": "Vegetable Salad",
       "category": "Lunch",
+      "cat_id": 3,
       "price": "247",
       "img": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -120,6 +210,7 @@
       "id": 11,
       "title": "Brown cooked dish",
       "category": "Lunch",
+      "cat_id": 3,
       "price": "250",
       "img": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -128,6 +219,7 @@
       "id": 13,
       "title": "barbecue",
       "category": "Lunch",
+      "cat_id": 3,
       "price": "120",
       "img": "https://images.pexels.com/photos/3690/food-restaurant-hand-dinner.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -136,6 +228,7 @@
       "id": 14,
       "title": "Dinnerware",
       "category": "Dinner",
+      "cat_id": 4,
       "price": "480",
       "img": "https://images.pexels.com/photos/262882/pexels-photo-262882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -144,6 +237,7 @@
       "id": 12,
       "title": "bruschetta",
       "category": "Dinner",
+      "cat_id": 4,
       "price": "220",
       "img": "https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -152,13 +246,10 @@
       "id": 15,
       "title": "steak",
       "category": "Dinner",
+      "cat_id": 4,
       "price": "220",
       "img": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     }
-  ],
-
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
