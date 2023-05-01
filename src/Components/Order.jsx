@@ -1,42 +1,50 @@
 import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
 const Order = () => {
   const { id } = useParams();
-  const [apiData, setApiData] = useState(""); // comming from api >>> menu
-  const [categoryTable, setCategoryTable] = useState(""); // comming from api >>> category
+  const [menu, setMenu] = useState([]); // comming from api >>> menu
+  const [category, setCategory] = useState([]); // comming from api >>> category
   
   const [entry, setEntry] = useState("");
 
   const url = "http://localhost:3001/cart_list";
   const navigate = useNavigate();
 
-  console.log(apiData);
+  //console.log(menu);
 
   ///handel Text Input
   const handelInput = (e) => {
     const quantity = e.target.value;
-    
-    const amount = apiData.price * quantity;
+    const amount = menu.price * quantity;
     setEntry({ ...entry, quantity, amount });
   };
 
   // Confirm (Input Data to Cart-List & Calculate of Quantity Change)
   const addDataToCartList = (e) => {
     e.preventDefault();
+    const randomId = uuidv4();
     axios
-      .post(url, {cat_id:categoryTable.id, menu_id: apiData.id,quantity: entry.quantity, amount: entry.amount, })
-      .then(() => { navigate("/cartlist"); })
+      .post(url, {
+        id:randomId,
+        cat_id: category.id, 
+        menu_id: menu.id,
+        quantity: entry.quantity, 
+        amount: entry.amount, })
+      .then(() => { 
+        navigate("/cartlist"); 
+      })
       .catch((err) => {  console.log(err); });
   };
 
   // Individual Data from Menu table by ID
-  const getMenuData = () => {
+  const getMenu = () => {
     axios
       .get(`http://localhost:3001/menu/${id}`) // Here "menu" is data table
       .then((response) => {
-        setApiData(response.data);
+        setMenu(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -44,22 +52,23 @@ const Order = () => {
   };
 
   // Individual Data from Menu table by ID
-  const getCategoryData = () => {
+  const getCategory= () => {
     axios
-      .get(`http://localhost:3001/category/${id}`) // Here "menu" is data table
+      .get("http://localhost:3001/category") // Here "menu" is data table
       .then((response) => {
-        setCategoryTable(response.data);
+        setCategory(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+
  
 
   useEffect(() => {
-    getMenuData();
-    getCategoryData();
+    getMenu();
+    getCategory();
     // eslint-disable-next-line
   });
 
@@ -71,19 +80,19 @@ const Order = () => {
           <div className="col-lg-4 col-md-3  col-sm-6 col-xs-6 ">
             {/*Card Start*/}
             <div className="card">
-              <img src={apiData.img} className="card-img-top" alt="..." />
+              <img src={menu.img} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">Title: {apiData.title}</h5>
+                <h5 className="card-title">Title: {menu.title}</h5>
                 <p className="card-text text-danger">
                   {" "}
                   Category: <b className="text-primary">
                    
-                    {apiData.cat_id}
+                    {menu.cat_id}
                   </b>
                 </p>
                 <span className="badge rounded-pill bg-secondary fs-8">
                  
-                  Price (TK.): {apiData.price}
+                  Price (TK.): {menu.price}
                 </span>
 
                 <div className="col-lg-4 col-md-3  col-sm-6 col-xs-6  mt-4">

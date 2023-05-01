@@ -8,14 +8,14 @@ const Home = () => {
 
   const [categoryTable, setCategoryTable] = useState([]); // Catch Category from Database
   const [menuTable, setMenuTable] = useState([]); // Catch All(menu) API Data from Database
-  const [filteredData, setFilteredData] = useState([]); // Catch Category wise data (Filter Method) from Database
   const [loading, setLoading] = useState(false); // Set Animation
-
+  const [filteredData, setFilteredData] = useState([]); // Catch Category wise data (Filter Method) from Database
+ 
   const loadData = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
    // Filter Function
@@ -41,7 +41,7 @@ const Home = () => {
   };
 */}
 
-// Catagory Table Call
+//API Catagory Table Call
   const category = () => {
     axios
       .get("http://localhost:3001/category")
@@ -53,7 +53,7 @@ const Home = () => {
       });
   };
   
-// Food Menu Table Call
+//API Food Menu Table Call
   const menu = () => {
     axios
       .get("http://localhost:3001/menu")
@@ -64,13 +64,17 @@ const Home = () => {
         console.log(err);
       });
   };
-
+ 
   useEffect(() => {
     category();
     menu();
-
     // eslint-disable-next-line
   }, []);
+
+  const showAllItems = () => {
+    setFilteredData(menuTable);
+    loadData();
+  };
 
   useEffect(() => {
     if (menuTable.length) {
@@ -79,11 +83,7 @@ const Home = () => {
     // eslint-disable-next-line
   }, [menuTable]);
 
-  const showAllItems = () => {
-    setFilteredData(menuTable);
-    loadData();
-  };
-
+  
   return (
     <>
       {/* Food Menu Category*/}
@@ -108,7 +108,7 @@ const Home = () => {
 
       {/* Fetch Data by Category*/}
      
-      {loading ? (<div className="row justify-content-center"><BarLoader color="#cfa9db" height={5} margin={0.5} speedMultiplier={2} width={500} /></div>) 
+      {loading ? (<div className="row justify-content-center"><BarLoader color="#cfa9db" height={5} margin={4} speedMultiplier={2} width={500} /></div>) 
       : (
         <div className="container">
           <div className="row">
@@ -121,7 +121,7 @@ const Home = () => {
                       <img src={menu.img} className="card-img-top" alt="..." />
                       <div className="card-body">
                         <h5 className="card-title">Title: { menu.title}</h5>
-                        <p className="card-text text-danger">Category: <b className="text-primary">{ menu.category}</b></p>
+                        {/*<p className="card-text text-danger">Category: <b className="text-primary">{ menu.category}</b></p>*/}
                         <p className="card-text text-danger">Category ID: <b className="text-primary">{ menu.cat_id}</b></p>
                         <p className="card-text text-overflow">Description:{ menu.description}</p>
                         <span className="badge rounded-pill bg-secondary fs-10">Price (TK.):{ menu.price}</span>

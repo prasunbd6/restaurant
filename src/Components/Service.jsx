@@ -30,9 +30,7 @@ const Service = () => {
   const showAllData=()=>{
 const joinTable=myMenuData.map((menu)=>{
   const cata=myCategoryData.find((targetid)=>targetid.id===menu.category_id);
-  return{
-    ...menu, cat_name: cata ? cata.name:""
-  }
+  return{ ...menu, cat_name: cata ? cata.name:"" }
 })
 setJoin(joinTable);
   }

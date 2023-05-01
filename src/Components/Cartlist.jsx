@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { ImBin } from "react-icons/im";
+import { ImBin, ImList2 } from "react-icons/im";
+
 
 const Cartlist = () => {
+  
   const [cartList, setCartList] = useState([]);
   const [menuList, setMenuList] = useState([]);
   const [categoryList, setcategoryList] = useState([]);
@@ -80,12 +82,12 @@ const Cartlist = () => {
         <div className="row justify-content-center">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 fs-3">
             {/* table Start */}
-            <table className="table table-hover">
+            <table className="table table-hov">
               <thead>
                 <tr className="text-center">
-                  <th scope="col">ID</th>
+                  <th scope="col">SL No.</th>
                   <th scope="col">Item</th>
-                  <th scope="col">Category</th>
+                  
                   <th scope="col">Quantity</th>
                   <th scope="col">Sub Total</th>
                   <th scope="col">Handle</th>
@@ -98,11 +100,12 @@ const Cartlist = () => {
                       <tr key={values.id} className="text-center">
                         <th scope="row">{values.id}</th>
                         <td>{values.menu_name}</td>
-                        <td>{values.cat_name}</td>
+                        
                         <td>{values.quantity}</td>
                         <td>{values.amount}</td>
                         <td>
-                          <i
+                        <i> <ImList2/> </i>
+                          <i className="ms-5"
                             onClick={() => {
                               if (
                                 window.confirm("Are you sure to delete data?")
