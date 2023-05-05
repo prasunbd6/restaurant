@@ -123,8 +123,8 @@ const Home = () => {
                         <h5 className="card-title">Title: { menu.title}</h5>
                         {/*<p className="card-text text-danger">Category: <b className="text-primary">{ menu.category}</b></p>*/}
                         <p className="card-text text-danger">Category ID: <b className="text-primary">{ menu.cat_id}</b></p>
-                        <p className="card-text text-overflow">Description:{ menu.description}</p>
-                        <span className="badge rounded-pill bg-secondary fs-10">Price (TK.):{ menu.price}</span>
+                        <p className="card-text text-overflow">Description: {menu.description}</p>
+                        <span className="badge rounded-pill bg-secondary fs-10">Price (TK.): { menu.price}</span>
                         <NavLink to={`/order/${menu.id}`} className="btn btn-warning btn-sm mt-2 mb-2 mx-2 position-absolute bottom-0 end-0">Add to Order</NavLink>
                       </div>
                     </div>

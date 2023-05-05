@@ -9,8 +9,11 @@ import Footer from "./Layout/Footer";
 import Order from "./Components/Order";
 import Cartlist from "./Components/Cartlist";
 import Header from "./Components/Header";
-//import AdminAddCategory from "../src/Admincomponents/Addcatagory";
-import Adminhome from "./Admincomponents/Adminhome";
+import Admin from "./Admin/Admincomponents/Adminhome";
+import Errorpage from "./Components/Errorpage";
+import Addcategory from "./Admin/Admincomponents/Addcategory";
+import Additem from "./Admin/Admincomponents/Additem";
+
 
 const App = () => {
   return (
@@ -18,15 +21,16 @@ const App = () => {
     <Header />
       <Navbar />
       <Routes>
-  {/*Client Panel*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/service" element={<Service />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/order/:id" element={<Order />}></Route>
         <Route path="/cartlist" element={<Cartlist />}></Route>
-        {/*Admin Panel*/}
-        <Route path="/admin" element={<Adminhome />}></Route>
+        <Route path="/admin" element={<Admin/>}></Route>
+        <Route path="/*" element={<Errorpage/>}></Route>
+        <Route path="/addcategory" element={<Addcategory/>}></Route>
+        <Route path="/additem" element={<Additem/>}></Route>
       </Routes>
       <Footer />
     </>

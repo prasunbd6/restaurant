@@ -111,10 +111,12 @@ background-color: rgb(55, 66, 64);
     background-color: rgb(222, 192, 230);
   }
 
-  /* Image animation*/
+  /* Table scroll*/
   
-
- 
+  .tbl-Scroll{
+    height: 400px; 
+    overflow-y: scroll;
+  }
 
   
   

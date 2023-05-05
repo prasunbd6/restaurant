@@ -22,36 +22,27 @@
       "user_id": 1
     }
   ],
-  "cart_list": [
-    {
-      "id": "63d00799-c6b5-453b-b902-606258d9657b",
-      "menu_id": 7,
-      "quantity": "1",
-      "amount": 44
-    },
-    {
-      "id": "ce791cf6-5fd4-4447-9307-f446973a4fc7",
-      "menu_id": 3,
-      "quantity": "3",
-      "amount": 90
-    }
-  ],
+  "cart_list": [],
   "category": [
     {
-      "id": 1,
+      "id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
       "name": "Breakfast"
     },
     {
-      "id": 2,
+      "id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
       "name": "Juice"
     },
     {
-      "id": 3,
+      "id": "bb303d20-1681-4018-bf7a-728f60d83787",
       "name": "Lunch"
     },
     {
-      "id": 4,
+      "id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
       "name": "Dinner"
+    },
+    {
+      "id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
+      "name": "Snacks"
     }
   ],
   "mymenu": [
@@ -90,140 +81,180 @@
   ],
   "menu": [
     {
-      "id": 1,
-      "title": "Fried Rice + Egg",
-      "cat_id": 1,
-      "price": "40",
-      "img": "https://images.pexels.com/photos/6823326/pexels-photo-6823326.jpeg",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      "id": "a5ad943f-1e42-498f-9756-a7f0d78277d0",
+      "title": "Ash",
+      "cat_id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
+      "price": "20",
+      "img": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "description": "Available from 10 AM to 7 PM"
     },
     {
-      "id": 5,
-      "title": "Bread + Egg",
-      "cat_id": 1,
-      "price": "50",
-      "img": "https://images.pexels.com/photos/824635/pexels-photo-824635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 3,
-      "title": "Egg Curry",
-      "cat_id": 1,
-      "price": "30",
-      "img": "https://images.pexels.com/photos/2067470/pexels-photo-2067470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 6,
-      "title": "burger with sunny",
-      "cat_id": 1,
-      "price": "80",
-      "img": "https://images.pexels.com/photos/2293537/pexels-photo-2293537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 2,
-      "title": "bottle of Juice",
-      "cat_id": 2,
-      "price": "35",
-      "img": "https://images.pexels.com/photos/6331200/pexels-photo-6331200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 4,
-      "title": "Green liquid",
-      "cat_id": 2,
-      "price": "40",
-      "img": "https://images.pexels.com/photos/4443437/pexels-photo-4443437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 7,
-      "title": "Glass with-orange",
-      "cat_id": 2,
-      "price": "44",
-      "img": "https://images.pexels.com/photos/5947076/pexels-photo-5947076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 9,
-      "title": "Pineapple Juice",
-      "cat_id": 2,
-      "price": "44",
-      "img": "https://images.pexels.com/photos/8679340/pexels-photo-8679340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 10,
-      "title": "Pasta",
-      "cat_id": 3,
-      "price": "300",
-      "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 8,
-      "title": "Vegetable Salad",
-      "cat_id": 3,
-      "price": "247",
-      "img": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 11,
-      "title": "Brown cooked dish",
-      "cat_id": 3,
-      "price": "250",
-      "img": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 13,
-      "title": "barbecue",
-      "cat_id": 3,
-      "price": "120",
-      "img": "https://images.pexels.com/photos/3690/food-restaurant-hand-dinner.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 14,
-      "title": "Dinnerware",
-      "cat_id": 4,
-      "price": "480",
-      "img": "https://images.pexels.com/photos/262882/pexels-photo-262882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 12,
-      "title": "bruschetta",
-      "cat_id": 4,
-      "price": "220",
-      "img": "https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 15,
-      "title": "steak",
-      "cat_id": 4,
-      "price": "220",
-      "img": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": "2dc07599-e1e3-41ba-b0f0-79607088cbe2",
-      "title": "test",
-      "cat_id": "1",
-      "price": "234",
-      "img": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "text"
-    },
-    {
-      "id": "2489d0ec-a6ec-43f2-8a48-b5c1207af62c",
-      "title": "test2",
-      "cat_id": "4",
+      "id": "834407db-92f5-4636-a2d0-34dc8e00244a",
+      "title": "Robin Stickel",
+      "cat_id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
       "price": "33",
-      "img": "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": " text-2"
+      "img": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "2e5d7e9a-e142-48fa-a88b-f6503e645c57",
+      "title": " Julian Jagtenberg",
+      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "price": "234",
+      "img": "https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "c5cc699e-e6e0-401c-8020-69c7abd74f28",
+      "title": "Rama Khandkar",
+      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "price": "20",
+      "img": "https://images.pexels.com/photos/2113556/pexels-photo-2113556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "3e8259cd-342d-4a06-8829-47f2bdbe7e9a",
+      "title": " Emrah Tolu",
+      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "price": "170",
+      "img": "https://images.pexels.com/photos/2662875/pexels-photo-2662875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "8eea344e-e197-4a4d-b3fc-dc7715c0919d",
+      "title": "Life Of Pix",
+      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "price": "405",
+      "img": "https://images.pexels.com/photos/101533/pexels-photo-101533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "fb1a2aaa-6e58-4146-8404-2e916b1cc15d",
+      "title": "Jane Doan",
+      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "price": "36",
+      "img": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "687eb1b3-35a6-46ac-beaf-8177ab8c7c3a",
+      "title": "PhotoMIX Company",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "30",
+      "img": "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "35a37d62-42d6-4c81-9540-aca427353546",
+      "title": "ROMAN ODINTSOV",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "30",
+      "img": "https://images.pexels.com/photos/4955257/pexels-photo-4955257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "119c9a4d-1a94-4080-8310-f8187d87a364",
+      "title": "iStock",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "40",
+      "img": "https://media.istockphoto.com/id/641975492/photo/three-fruits-and-vegetables-detox-drinks.jpg?s=1024x1024&w=is&k=20&c=RBHmlO1e2yOpsAPLf6JVNCXAIE1gEq9U6wHfapNI4_k=",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "f53579ff-9edc-414a-b1f9-a8c903da5c5f",
+      "title": "fresh fruits and vegetables juices",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "70",
+      "img": "https://media.istockphoto.com/id/1253099922/photo/assortment-of-fresh-fruits-and-vegetables-juices-in-rainbow-colors.jpg?s=2048x2048&w=is&k=20&c=pGEuZ97yWrGP1sUFpke4rJH6_9Wj98PwilWQj6ESyS4=",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "91ebe53d-4113-48ed-bf5e-f26aa23c8eaf",
+      "title": " Polina Tankilevitch",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "45",
+      "img": "https://images.pexels.com/photos/4443445/pexels-photo-4443445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
+    },
+    {
+      "id": "f67c4161-7bee-4ca4-b0a9-16a26ee367cf",
+      "title": "Ella Olsson",
+      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "price": "170",
+      "img": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 1:00 PM to 3:00 PM"
+    },
+    {
+      "id": "a9a08216-3295-4330-8daa-d8759f50f416",
+      "title": "fauxels",
+      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "price": "200",
+      "img": "https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 1:00 PM to 3:00 PM"
+    },
+    {
+      "id": "eadcb668-1585-4378-8d19-fe5f27963c5b",
+      "title": "Lisa Fotios",
+      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "price": "210",
+      "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 1:00 PM to 3:00 PM"
+    },
+    {
+      "id": "4dd69a64-11dd-4628-8198-4b30efce1c45",
+      "title": " Ella Olsson",
+      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "price": "220",
+      "img": "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 1:00 PM to 3:00 PM"
+    },
+    {
+      "id": "e1c1a8dc-3547-4f45-a654-00ff2a24836c",
+      "title": "Chan Walrus",
+      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "price": "220",
+      "img": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 1:00 PM to 3:00 PM"
+    },
+    {
+      "id": "a660b22e-7eaa-4fc1-9b74-76ea002ed00a",
+      "title": "Pixabay Pixabay",
+      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "price": "300",
+      "img": "https://images.pexels.com/photos/262882/pexels-photo-262882.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "description": "Available from 8:00 PM to 11:00 PM"
+    },
+    {
+      "id": "1664802e-e724-4ee5-9c5f-76913954dfb3",
+      "title": " Adrienn",
+      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "price": "300",
+      "img": "https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "description": "Available from 8:00 PM to 11:00 PM"
+    },
+    {
+      "id": "abb08c3c-8d02-4c18-902c-28f2916a132a",
+      "title": "Lisa Fotios",
+      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "price": "170",
+      "img": "https://images.pexels.com/photos/1655329/pexels-photo-1655329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 8:00 PM to 11:00 PM"
+    },
+    {
+      "id": "110e675e-7027-49e5-a9f3-58e71b9dbe5f",
+      "title": "Pixabay",
+      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "price": "120",
+      "img": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 8:00 PM to 11:00 PM"
+    },
+    {
+      "id": "946aa230-6c00-4b83-8ae9-f44ce359b001",
+      "title": "Janko Ferlic",
+      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "price": "160",
+      "img": "https://images.pexels.com/photos/590477/pexels-photo-590477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 8:00 PM to 11:00 PM"
     }
   ]
 }

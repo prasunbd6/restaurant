@@ -63,9 +63,6 @@ const Order = () => {
       });
   };
 
-
- 
-
   useEffect(() => {
     getMenu();
     getCategory();
