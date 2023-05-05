@@ -6,6 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install json-server`
+
+Install json-server package
+
+### `npm run server`
+
+Run this command from any terminal. After do that, local file "db.json" will be run from port:3001 . 
+Local File will be work as API. Open [http://localhost:3001/menu](http://localhost:3001/menu) to view 
+it in your browser.
+
 ### `npm start`
 
 Runs the app in the development mode.\
