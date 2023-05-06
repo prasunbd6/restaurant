@@ -255,6 +255,14 @@
       "price": "160",
       "img": "https://images.pexels.com/photos/590477/pexels-photo-590477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "Available from 8:00 PM to 11:00 PM"
+    },
+    {
+      "id": "e346c998-a3b7-4f85-855e-86cd97476905",
+      "title": "Naim Benjelloun",
+      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "price": "70",
+      "img": "https://images.pexels.com/photos/2110923/pexels-photo-2110923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Available from 10 AM to 7 PM"
     }
   ]
 }

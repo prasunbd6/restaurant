@@ -6,9 +6,11 @@ const Navbar = () => {
   return (
     <>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
-    <div className="container-fluid">
-    <img src={logo} alt="" height="150px" className="image-fluid img-animation"/> 
-    </div>
+<div className="container-fluid">
+      <h1 className="navbar-brand"><img src={logo} alt="" height="200px" className="image-fluid img-animation"/></h1>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button></div>
     <div className="collapse navbar-collapse " id="navbarText">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end kaushan-font fs-3">
           <li className="nav-item m-2">
@@ -28,9 +30,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-  </nav>
-
-      
+  </nav>  
     </>
   );
 };

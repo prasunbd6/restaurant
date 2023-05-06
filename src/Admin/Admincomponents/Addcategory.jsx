@@ -5,7 +5,7 @@ import Navigationlink from "./Navlink";
 import { v4 as uuidv4 } from "uuid";
 
 const Addcategory = () => {
-const randomId = uuidv4();
+  const randomId = uuidv4();
   const navigate = useNavigate();
 
   const [inputCategory, setInputCategory] = useState({
@@ -16,7 +16,7 @@ const randomId = uuidv4();
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/category",inputCategory)
+      .post("http://localhost:3001/category", inputCategory)
       .then(() => {
         navigate("/admin");
       })
@@ -30,21 +30,20 @@ const randomId = uuidv4();
     setInputCategory({ ...inputCategory, [name]: value });
   };
 
+  const [categoryTable, setCategoryTable] = useState([]);
 
-  const [categoryTable, setCategoryTable]=useState([]);
-
-  const showcategoryTable=()=>{
+  const showcategoryTable = () => {
     axios
-    .get("http://localhost:3001/category")
-    .then((response)=>{
-setCategoryTable(response.data);
-    })
-    .catch()
-  }
+      .get("http://localhost:3001/category")
+      .then((response) => {
+        setCategoryTable(response.data);
+      })
+      .catch();
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     showcategoryTable();
-  })
+  });
 
   return (
     <>
@@ -56,9 +55,9 @@ setCategoryTable(response.data);
 
           {/* Gap Start */}
           <div className="col-md-1"></div>
-        {/* Gap End */}
+          {/* Gap End */}
 
-        {/* Gap Start */}
+          {/* Input Start */}
           <div className="col-md-3 mt-5">
             <form onSubmit={handelSubmit}>
               <div className="input-group mb-3">
@@ -78,43 +77,53 @@ setCategoryTable(response.data);
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default"
                 />
-                <button type="submit" className="btn btn-sm btn-primary">
+                <button type="submit" className="btn btn-lg btn-primary m-1">
                   Submit
                 </button>
               </div>
             </form>
           </div>
+          {/* Input Close */}
+
+          {/* Gap Start */}
           <div className="col-md-1"></div>
+          {/* Gap End */}
+
           <div className="col-md-4 col-sm-12">
-          <h3>Table List Of Category</h3>
-          <div className="tbl-Scroll">
-          <table className="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Category Name</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-  {categoryTable.map((values)=>{
-    return(
-      <>
-      <tr key={values.id}>
-      <th scope="row">{values.id}</th>
-      <td>{values.name}</td>
-      <td>
-      <button className="btn btn-sm btn-info">Edit</button>
-      <button className="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-      </>
-    )
-  })}
-  </tbody>
-</table>
-          </div>
-          
+            <h3 className="text-primary text-center">Table List Of Category</h3>
+            <div className="tbl-Scroll">
+              <table className="table mt-3">
+                <thead>
+                  <tr>
+                    <th scope="col" className="text-center">
+                      Category Name
+                    </th>
+                    <th scope="col" className="text-center">
+                      Handle
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {categoryTable.map((values) => {
+                    return (
+                      <>
+                        <tr key={values.id}>
+                          <td className="text-center">{values.name}</td>
+                          <td className="text-center">
+                            <button className="btn btn-sm btn-info m-1">
+                              Edit
+                            </button>
+                            <button className="btn btn-sm btn-danger m-1">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      </>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
