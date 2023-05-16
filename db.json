@@ -29,12 +29,12 @@
       "name": "Breakfast"
     },
     {
-      "id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
-      "name": "Juice"
+      "name": "Juice",
+      "id": "427b08b8-0f6e-4a55-b72a-4d0436331230"
     },
     {
-      "id": "bb303d20-1681-4018-bf7a-728f60d83787",
-      "name": "Lunch"
+      "name": "Lunch",
+      "id": "bb303d20-1681-4018-bf7a-728f60d83787"
     },
     {
       "id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
@@ -43,40 +43,6 @@
     {
       "id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
       "name": "Snacks"
-    }
-  ],
-  "mymenu": [
-    {
-      "id": 1,
-      "title": "Fried Rice + Egg",
-      "category_id": 1,
-      "price": "40",
-      "img": "https://images.pexels.com/photos/6823326/pexels-photo-6823326.jpeg",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 5,
-      "title": "Bread + Egg",
-      "category_id": 2,
-      "price": "50",
-      "img": "https://images.pexels.com/photos/824635/pexels-photo-824635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 2,
-      "title": "bottle of Juice",
-      "category_id": 4,
-      "price": "35",
-      "img": "https://images.pexels.com/photos/6331200/pexels-photo-6331200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      "id": 10,
-      "title": "Pasta",
-      "category_id": 3,
-      "price": "300",
-      "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     }
   ],
   "menu": [

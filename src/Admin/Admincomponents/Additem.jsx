@@ -1,15 +1,17 @@
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
 import Navigationlink from "../Admincomponents/Navlink";
+import { ImBin, ImList2 } from "react-icons/im";
+import { BarLoader } from "react-spinners";
 
 const Additem = () => {
   const randomId = uuidv4();
-
-  const [category, setCategory] = useState([]);
-  const [menu, setMenu]=useState([]);
-  const [update, setUpdate]=useState([]);
+  const [categoryTable, setCategoryTable] = useState([]);
+  const [menuTable, setMenuTable] = useState([]);
+  const [mergeTable, setMergeTable] = useState([]);
+  const [loading, setLoading] = useState(false); // Set Animation
   const [entry, setEntry] = useState({
     id: randomId,
     title: "",
@@ -19,32 +21,19 @@ const Additem = () => {
     description: "",
   });
 
-
+  // eslint-disable-next-line
+  const { id } = useParams();
   const navigate = useNavigate();
 
-  // Category Table
-  const categoryTable = () => {
+  // Menu list data delete by id
+  const handelDelete = (id) => {
     axios
-      .get("http://localhost:3001/category")
-      .then((response) => {
-        setCategory(response.data);
+      .delete(`http://localhost:3001/menu/${id}`)
+      .then(() => {
+        mergeTable();
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   };
-
-  //Menu Table
-  const menuTable=()=>{
-    axios
-    .get("http://localhost:3001/menu")
-    .then((response)=>{
-    setMenu(response.data);
-    })
-    .catch((err)=>{
-      console.log(err);
-    })
-  }
 
   // Insert Data
   const handleSubmit = (e) => {
@@ -65,31 +54,58 @@ const Additem = () => {
     setEntry({ ...entry, [name]: value });
   };
 
+  // Spinner Function
+  const loadData = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
+
+  // Fetch Request function
+  const fetchData = async () => {
+    const [categoryResponse, menuResponse] = await Promise.all([
+      axios.get("http://localhost:3001/category"),
+      axios.get("http://localhost:3001/menu"),
+    ]);
+    setCategoryTable(categoryResponse.data);
+    setMenuTable(menuResponse.data);
+  };
+
   // Menu table show by category id
-  const showDataById=()=>{
-    const updateTable=menu.map((item)=>{
-      const cat = category.find( (targetKey) => targetKey.id === item.cat_id );
-      return{ ...item, cat_name: cat ? cat.name:""}
-  }
-  )
-  setUpdate(updateTable);
-}
+  const showDatabyid = () => {
+    const update = menuTable.map((item) => {
+      const cat = categoryTable.find(
+        (targetKey) => targetKey.id === item.cat_id
+      );
+      return { ...item, cat_name: cat ? cat.name : "" };
+    });
+    setMergeTable(update);
+  };
+
+  //Must use in this way
+  useEffect(() => {
+    if (categoryTable.length > 0 && menuTable.length > 0) {
+      showDatabyid();
+    }
+    // eslint-disable-next-line
+  }, [categoryTable, menuTable]);
 
   useEffect(() => {
-    categoryTable();
-    menuTable();
-    showDataById()
-    // eslint-disable-next-line
-  });
+    fetchData();
+    loadData();
+  },[]);
 
   return (
     <>
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-2 col-sm-6 mt-3"><Navigationlink /></div>
+        <div className="row justify-content-center">
+          <div className="col-md-2 mt-3">
+            <Navigationlink />
+          </div>
 
-          <div className="col-md-3 m-5  mt-4">
-          {/* Input Start */}
+          <div className="col-md-2 m-2  mt-4">
+            {/* Input Start */}
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Title</label>
@@ -111,7 +127,7 @@ const Additem = () => {
                   name="cat_id"
                 >
                   <option>select category</option>
-                  {category.map((values) => {
+                  {categoryTable.map((values) => {
                     return (
                       <>
                         <option key={values.id} value={values.id}>
@@ -164,44 +180,87 @@ const Additem = () => {
                   Submit
                 </button>
               </div>
-              
             </form>
             {/* Input Close */}
           </div>
 
-          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 m-2  mt-3">
-          <h2 className="text-primary text-center">Food Item List</h2>
-          <div className="tbl-Scroll">
-          <table className="table mt-2">
-            <thead>
-              <tr>
-                <th scope="col" className="text-center">Title</th>
-                <th scope="col" className="text-center">Category</th>
-                <th scope="col" className="text-center">Price</th>
-                <th scope="col" className="text-center">Description</th>
-                <th scope="col" className="text-center">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-            {update.map((values)=>{
-              return(
-                <>
-                <tr key={values.id}>
-                <th scope="row">{values.title}</th>
-                <td className="text-center">{values.cat_name}</td>
-                <td className="text-center">{values.price}</td>
-                <td className="text-center">{values.description}</td>
-                <td>
-                <button className="btn btn-sm btn-primary ms-1">Edit</button>
-                <button className="btn btn-sm btn-danger ms-1">Delete</button>
-                </td>
-              </tr>
-                </>
-              )
-            })}
-            </tbody>
-          </table>
-          </div>
+          <div className="col-md m-2  mt-3">
+            <h2 className="text-primary text-center">Food Item List</h2>
+            {mergeTable.length > 0 ? (
+              <div className="tbl-Scroll">
+                <table className="table mt-2">
+                  <thead>
+                    <tr>
+                      <th scope="col" className="text-center">
+                        Image
+                      </th>
+                      <th scope="col" className="text-center">
+                        Title
+                      </th>
+                      <th scope="col" className="text-center">
+                        Category
+                      </th>
+                      <th scope="col" className="text-center">
+                        Price
+                      </th>
+                      <th scope="col" className="text-center">
+                        Description
+                      </th>
+                      <th scope="col" className="text-center">
+                        Handle
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mergeTable.map((values) => {
+                      return (
+                        <>
+                          <tr key={values.id}>
+                            <th scope="row">
+                              <img src={values.img} alt="" width="100px" />
+                            </th>
+                            <td className="text-center">{values.title}</td>
+                            <td className="text-center">{values.cat_name}</td>
+                            <td className="text-center">{values.price}</td>
+                            <td className="text-center">
+                              {values.description}
+                            </td>
+                            <td className="text-center">
+                              <NavLink
+                                to={`/edititem/${values.id}`}
+                                className="m-2 fs-3"
+                              >
+                                <ImList2 />
+                              </NavLink>
+                              <i
+                                className="m-2 fs-3"
+                                onClick={() => {
+                                  if (
+                                    window.confirm(
+                                      "Are you sure to delete data?"
+                                    )
+                                  ) {
+                                    handelDelete(values.id);
+                                  }
+                                }}
+                              >
+                                <ImBin />
+                              </i>
+                            </td>
+                          </tr>
+                        </>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <>
+                <p className="text-Center">
+                  {loading}):(<BarLoader color="#cfa9db" height={5} margin={4} speedMultiplier={0.8} width={500} />)
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>

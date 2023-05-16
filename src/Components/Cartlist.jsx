@@ -80,14 +80,12 @@ const Cartlist = () => {
       <h1>Cart List</h1>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 fs-3">
+          <div className="col-lg col-md col-sm col-xs fs-4">
             {/* table Start */}
             <table className="table table-hov">
               <thead>
                 <tr className="text-center">
-                  <th scope="col">SL No.</th>
                   <th scope="col">Item</th>
-                  
                   <th scope="col">Quantity</th>
                   <th scope="col">Sub Total</th>
                   <th scope="col">Handle</th>
@@ -98,14 +96,12 @@ const Cartlist = () => {
                   return (
                     <>
                       <tr key={values.id} className="text-center">
-                        <th scope="row">{values.id}</th>
-                        <td>{values.menu_name}</td>
-                        
+                        <th scope="row">{values.menu_name}</th> 
                         <td>{values.quantity}</td>
                         <td>{values.amount}</td>
                         <td>
-                        <i> <ImList2/> </i>
-                          <i className="ms-5"
+                        <i className="p-1"> <ImList2/> </i>
+                          <i className="p-1"
                             onClick={() => {
                               if (
                                 window.confirm("Are you sure to delete data?")
@@ -130,10 +126,7 @@ const Cartlist = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-            <span>
-              {" "}
-              <h2>Total : {totalAmount}</h2>
-            </span>
+            <span><h2>Total : {totalAmount}</h2></span>
           </div>
         </div>
       </div>

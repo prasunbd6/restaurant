@@ -116,6 +116,7 @@ background-color: rgb(55, 66, 64);
   .tbl-Scroll{
     height: 400px;
     overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   

@@ -1,17 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navigationlink from "./Navlink";
 import { v4 as uuidv4 } from "uuid";
+import { ImBin, ImList2 } from "react-icons/im";
+import { BarLoader } from "react-spinners";
 
 const Addcategory = () => {
   const randomId = uuidv4();
   const navigate = useNavigate();
 
+  const [categoryTable, setCategoryTable] = useState([]);
+  const [loading, setLoading] = useState(false); // Set Animation
   const [inputCategory, setInputCategory] = useState({
     id: randomId,
     name: "",
   });
+
+  // Spinner Function
+  const loadData = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -30,20 +42,31 @@ const Addcategory = () => {
     setInputCategory({ ...inputCategory, [name]: value });
   };
 
-  const [categoryTable, setCategoryTable] = useState([]);
-
-  const showcategoryTable = () => {
+  const Category = () => {
     axios
       .get("http://localhost:3001/category")
       .then((response) => {
         setCategoryTable(response.data);
       })
-      .catch();
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
-    showcategoryTable();
-  });
+    Category();
+    loadData();
+  }, []);
+
+  // Category list data delete by id
+  const handelDelete=(id)=>{
+    axios
+      .delete(`http://localhost:3001/category/${id}`)
+      .then(() => {
+        categoryTable();
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <>
@@ -91,14 +114,15 @@ const Addcategory = () => {
 
           <div className="col-md-4 col-sm-12">
             <h3 className="text-primary text-center">Table List Of Category</h3>
+            {categoryTable.length > 0 ? (
             <div className="tbl-Scroll">
               <table className="table mt-3">
                 <thead>
                   <tr>
-                    <th scope="col" className="text-center">
+                    <th scope="col" className="text-center fs-4">
                       Category Name
                     </th>
-                    <th scope="col" className="text-center">
+                    <th scope="col" className="text-center fs-4">
                       Handle
                     </th>
                   </tr>
@@ -108,14 +132,20 @@ const Addcategory = () => {
                     return (
                       <>
                         <tr key={values.id}>
-                          <td className="text-center">{values.name}</td>
+                          <td className="text-center fs-4">{values.name}</td>
                           <td className="text-center">
-                            <button className="btn btn-sm btn-info m-1">
-                              Edit
-                            </button>
-                            <button className="btn btn-sm btn-danger m-1">
-                              Delete
-                            </button>
+                            <NavLink to={`/editcategory/${values.id}`} className="fs-3 m-2">
+                            <ImList2/> 
+                            </NavLink>
+                            <i onClick={() => {
+                              if (
+                                window.confirm("Are you sure to delete data?")
+                              ) {
+                                handelDelete(values.id);
+                              }
+                            }} className="fs-3 m-2">
+                            <ImBin/>
+                            </i>
                           </td>
                         </tr>
                       </>
@@ -124,6 +154,17 @@ const Addcategory = () => {
                 </tbody>
               </table>
             </div>
+            ) : (
+              <>
+                <p className="text-Center">{loading} <BarLoader
+                color="#cfa9db"
+                height={5}
+                margin={4}
+                speedMultiplier={.8}
+                width={500}
+              /></p>
+              </>
+            )}
           </div>
         </div>
       </div>

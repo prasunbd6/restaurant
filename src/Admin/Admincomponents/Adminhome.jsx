@@ -2,7 +2,6 @@ import React from "react";
 
 import Navigationlink from "./Navlink";
 
-
 const Adminhome = () => {
   return (
     <>
@@ -11,14 +10,16 @@ const Adminhome = () => {
           <div className="col-md-2">
             <Navigationlink />
           </div>
-
-          <div className="col-md-1"></div>
-          <div className="col-md-6 text-center">
+          <div className="col-md text-center">
           <h1 className="text-info">Welcome</h1>
           <h1 className="text-dark">To</h1>
-           <h1 className="text-primary">Admin Panel</h1>
-          </div>
+          <h1 className="text-primary mb-5">Admin Panel</h1>
         </div>
+
+        </div>
+        
+          
+        
       </div>
     </>
   );
