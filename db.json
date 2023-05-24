@@ -71,14 +71,6 @@
       "description": "Available from 10 AM to 7 PM"
     },
     {
-      "id": "c5cc699e-e6e0-401c-8020-69c7abd74f28",
-      "title": "Rama Khandkar",
-      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
-      "price": "20",
-      "img": "https://images.pexels.com/photos/2113556/pexels-photo-2113556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
-    },
-    {
       "id": "3e8259cd-342d-4a06-8829-47f2bdbe7e9a",
       "title": " Emrah Tolu",
       "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
