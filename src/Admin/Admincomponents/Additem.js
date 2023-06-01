@@ -2,7 +2,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, NavLink } from "react-router-dom";
-import Navigationlink from "../Admincomponents/Navlink";
+import Navigationlink from "./Navlink";
 import { ImBin, ImList2 } from "react-icons/im";
 import { BarLoader } from "react-spinners";
 

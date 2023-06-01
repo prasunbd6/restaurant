@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import Navigationlink from "./Navlink";
 import { v4 as uuidv4 } from "uuid";
 import { ImBin, ImList2 } from "react-icons/im";
 import { BarLoader } from "react-spinners";
 
+
 const Addcategory = () => {
   const randomId = uuidv4();
-  const navigate = useNavigate();
 
   const [categoryTable, setCategoryTable] = useState([]);
   const [loading, setLoading] = useState(false); // Set Animation
@@ -30,7 +30,7 @@ const Addcategory = () => {
     axios
       .post("http://localhost:3001/category", inputCategory)
       .then(() => {
-        navigate("/admin");
+        window.location.reload(); // Reload the page
       })
       .catch((error) => {
         console.log(error);
@@ -63,7 +63,7 @@ const Addcategory = () => {
     axios
       .delete(`http://localhost:3001/category/${id}`)
       .then(() => {
-        categoryTable();
+        window.location.reload(); // Reload the page
       })
       .catch((err) => console.log(err));
   }

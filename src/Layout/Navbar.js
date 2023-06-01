@@ -1,3 +1,5 @@
+//Navbar.jsx
+
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../images/pngegg.png"
@@ -23,7 +25,10 @@ const Navbar = () => {
             <NavLink to="/contact" className="nav-link">Contact</NavLink>
           </li>
           <li className="nav-item  m-2">
-            <NavLink to="/admin" className="nav-link">Administration</NavLink>
+            <NavLink to="/customersignin" className="nav-link">Customer</NavLink>
+          </li>
+          <li className="nav-item  m-2">
+            <NavLink to="/adminsignin" className="nav-link">Admin</NavLink>
           </li>
           <li className="nav-item  m-2">
             <NavLink to="/testfetch" className="nav-link">Test</NavLink>

@@ -2,8 +2,16 @@ import React from "react";
 import { FcBusinessman } from "react-icons/fc";
 import { FaPowerOff } from "react-icons/fa";
 import Operation from "./Navlink";
+// Signout
+import useAuth from "../../Hooks/useAuth";
+
 
 const Adminhome = () => {
+  const { signOutUser } = useAuth();
+
+  const handleSignOut = () => {
+    signOutUser();
+  };
   
   return (
     <>
@@ -13,7 +21,7 @@ const Adminhome = () => {
         <div class="d-flex justify-content-end">
           <span className="fs-3 text-secondary ">
             <i className="m-2"><FcBusinessman /></i>
-            <i className="m-2"><FaPowerOff /></i>
+            <i className="m-2" onClick={handleSignOut}><FaPowerOff /></i>
           </span>
         </div>
       </div>

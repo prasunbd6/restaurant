@@ -1,6 +1,9 @@
 // Adminsignup.jsx
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+// React Toast
+import { ToastContainer, toast } from 'react-toastify';
+
 // Firebase Signup User (Authentication)
 import { app } from "../../firebaseConfig";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -8,9 +11,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const Adminsignup = () => {
   // Firebase Authentication
   const auth = getAuth(app);
-
-  const navigate = useNavigate();
-  const [err, setErr] = useState("");
+  
   const [entry, setEntry] = useState({ email: "", password: "" });
 
   const handelInput = (e) => {
@@ -20,18 +21,25 @@ const Adminsignup = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     if (!entry.email) {
-      setErr("type user Email address");
-    } else if (entry.password.length < 7) {
-      setErr("type atlease 8 character");
-    } else {
+      toast.error("type user Email address");
+    } else if (entry.password.length < 1) {
+      toast.error(`password can't be empty!`);
+    } 
+    else if (entry.password.length < 7) {
+      toast.error(`type atlease 8 character`);
+    } 
+    else {
       createUserWithEmailAndPassword(auth, entry.email, entry.password)
-        .then((values) => {
+        .then(() => {
           // Redirect to Signed in
-          navigate("/adminsignin");
+          toast.success(`Success!!!`);
+          setEntry({ email: "", password: "" });
+  //navigate("/adminsignin");
           // ...
         })
         .catch((error) => {
-          console.log(error.code);
+          toast.error(`${console.log(error.code)}`);
+          
         });
     }
   };
@@ -66,11 +74,9 @@ const Adminsignup = () => {
                   type="password"
                   className="form-control"
                   placeholder="type price"
-                  required
                 />
               </div>
 
-              <div className="mb-3"><p>{err}</p></div>
 
               <div className="d-grid mt-4">
                 <button type="submit" className="btn btn-sm btn-danger">
@@ -94,6 +100,7 @@ const Adminsignup = () => {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-center" autoClose={2000}/>
     </>
   );
 };

@@ -2,9 +2,8 @@
   "admin": [
     {
       "id": 1,
-      "ad_name": "admin",
-      "ad_email": "admin@admin.com",
-      "ad_password": "admin"
+      "ad_email": "prasunbd6@gmail.com",
+      "ad_password": "235@youngone"
     }
   ],
   "user": [
@@ -41,7 +40,7 @@
       "name": "Dinner"
     },
     {
-      "id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
+      "id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
       "name": "Snacks"
     }
   ],
@@ -49,7 +48,7 @@
     {
       "id": "a5ad943f-1e42-498f-9756-a7f0d78277d0",
       "title": "Ash",
-      "cat_id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
+      "cat_id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
       "price": "20",
       "img": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
       "description": "Available from 10 AM to 7 PM"
@@ -57,7 +56,7 @@
     {
       "id": "834407db-92f5-4636-a2d0-34dc8e00244a",
       "title": "Robin Stickel",
-      "cat_id": "f4e8a11b-cac2-446b-8301-d4300e35b1a9",
+      "cat_id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
       "price": "33",
       "img": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "Available from 10 AM to 7 PM"
