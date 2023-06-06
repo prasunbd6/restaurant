@@ -17,43 +17,44 @@ import Editcategory from "./Admin/Admincomponents/Editcategory";
 import Edititem from "./Admin/Admincomponents/Edititem";
 import Testfetch from "./Components/Testfetch";
 import Adminhome from "./Admin/Admincomponents/Adminhome";
-import Adminsignin from "./Admin/Admincomponents/Adminsignin";
-import Adminsignup from "./Admin/Admincomponents/Adminsignup";
 //For admin authentication  Route
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AdminPrivateRoute from "./PrivateRoute/AdminPrivateRoute";
+import AdminAuthentication from "./Admin/Admincomponents/AdminAuthentication";
+import AdminDashboard from "./Admin/Admincomponents/AdminDashboard";
 
 const App = () => {
 
   return (
-    <>
+    <>  
         <Header />
         <Navbar />
         <Routes>
           {/* Client Section */}
-          <Route path="/" element={<Home />} />
+          
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/customersignin" element={<Customersignin />} />
           <Route path="/testfetch" element={<Testfetch />} />
           <Route path="/order/:id" element={<Order />} />
           <Route path="/cartlist" element={<Cartlist />} />
+          
+          {/* Public Section */}
+          <Route path="/" element={<Home />} />
+          <Route path="/adminauthentication" element={<AdminAuthentication/>}/>
+          <Route path="/adminhome" element={<Adminhome/>} />
           <Route path="/*" element={<Errorpage />} />
 
-          {/* Public Section */}
-          <Route path="/adminsignin" element={<Adminsignin />} />
-          <Route path="/adminsignup" element={<Adminsignup />} />
-
-          {/* Admin Section Protected Route Start*/}
-          
-            <Route path="/adminhome" element={<PrivateRoute><Adminhome/></PrivateRoute>} />
-            <Route path="/addcategory" element={<PrivateRoute><Addcategory /></PrivateRoute>} />
-            <Route path="/editcategory/:id" element={<PrivateRoute><Editcategory /></PrivateRoute>} />
-            <Route path="/additem" element={<PrivateRoute><Additem /></PrivateRoute>} />
-            <Route path="/edititem/:id" element={<PrivateRoute><Edititem /></PrivateRoute>} />
-          
+          {/* Admin Section Protected Route Start*/}     
+          <Route element={<AdminPrivateRoute/>}>
+          <Route path="/admindashboard" element={<AdminDashboard/>} />
+          <Route path="/addcategory" element={<Addcategory />} />
+            <Route path="/editcategory/:id" element={<Editcategory />} />
+            <Route path="/additem" element={<Additem />} />
+            <Route path="/edititem/:id" element={<Edititem />} /> 
+          </Route>               
         </Routes>
+        
         <Footer />
-
     </>
   );
 };

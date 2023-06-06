@@ -1,5 +1,7 @@
 // firebaseConfig.js
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+//
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -8,9 +10,10 @@ const firebaseConfig = {
   projectId: "fir-auth-527cc",
   storageBucket: "fir-auth-527cc.appspot.com",
   messagingSenderId: "987942723457",
-  appId: "1:987942723457:web:77de71a04b08ce7be05280"
+  appId: "1:987942723457:web:77de71a04b08ce7be05280",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
+export const auth = getAuth(app); // For Authentication

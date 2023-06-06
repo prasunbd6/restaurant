@@ -1,57 +1,46 @@
 // Adminsignup.jsx
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 // React Toast
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
-// Firebase Signup User (Authentication)
-import { app } from "../../firebaseConfig";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import userSignUp from "../../auth/adminUserSignup";
 
-const Adminsignup = () => {
-  // Firebase Authentication
-  const auth = getAuth(app);
-  
+const Adminsignup = (props) => {
   const [entry, setEntry] = useState({ email: "", password: "" });
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/admindashboard";
+
+  const { error, signUp } = userSignUp();
 
   const handelInput = (e) => {
     setEntry({ ...entry, [e.target.name]: e.target.value });
   };
 
-  const handelSubmit = (e) => {
+  const handleCreateUser = async (e) => {
     e.preventDefault();
-    if (!entry.email) {
-      toast.error("type user Email address");
-    } else if (entry.password.length < 1) {
-      toast.error(`password can't be empty!`);
-    } 
-    else if (entry.password.length < 7) {
-      toast.error(`type atlease 8 character`);
-    } 
-    else {
-      createUserWithEmailAndPassword(auth, entry.email, entry.password)
-        .then(() => {
-          // Redirect to Signed in
-          toast.success(`Success!!!`);
-          setEntry({ email: "", password: "" });
-  //navigate("/adminsignin");
-          // ...
-        })
-        .catch((error) => {
-          toast.error(`${console.log(error.code)}`);
-          
-        });
+    await signUp(entry.email, entry.password);
+    if (!error) {
+      navigate(from, { replace: true });
+      entry.email("");
+      entry.password("");
+      return;
+    } else {
+      setErrorMsg(error);
     }
   };
 
   return (
     <>
-      <h1> Admin Sign Up</h1>
-      <div className="container-fluid">
+      <h1 className="text-center"> Admin Sign Up</h1>
+      <div className="container-fluid mt-3">
         <div className="row justify-content-center">
           <div className="col-md-3">
             {/* Login Input Start */}
-            <form onSubmit={handelSubmit}>
+            <form onSubmit={handleCreateUser}>
               <div className="mb-3">
                 <label className="form-label">Email</label>
                 <input
@@ -73,11 +62,10 @@ const Adminsignup = () => {
                   name="password"
                   type="password"
                   className="form-control"
-                  placeholder="type price"
+                  placeholder="type password"
                 />
               </div>
-
-
+              {error && <p>{errorMsg}</p>}
               <div className="d-grid mt-4">
                 <button type="submit" className="btn btn-sm btn-danger">
                   Submit
@@ -89,8 +77,8 @@ const Adminsignup = () => {
                   You wanna Sign In your Account?
                 </h6>
                 <NavLink
+                  onClick={props.toggleFrom}
                   className="text-center text-info-emphasis text-decoration-none"
-                  to="/adminsignin"
                 >
                   <b>Sign In</b>
                 </NavLink>
@@ -100,7 +88,7 @@ const Adminsignup = () => {
           </div>
         </div>
       </div>
-      <ToastContainer position="top-center" autoClose={2000}/>
+      <ToastContainer position="top-center" autoClose={2000} />
     </>
   );
 };

@@ -140,3 +140,13 @@
   height: 100px;
   width: auto;
 }
+
+.btn-gradient-linear{
+  background: linear-gradient(45deg, rgb(180, 98, 98), rgb(227, 233, 235),rgb(227, 233, 233));
+  border-radius: 20px .50px 30px;
+}
+
+.btn-gradient-radial{
+  background: radial-gradient( rgb(62, 62, 88), rgb(148, 149, 158),rgb(255, 255, 255));
+  border-radius: 20px .50px 30px;
+}

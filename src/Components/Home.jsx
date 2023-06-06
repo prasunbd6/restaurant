@@ -99,7 +99,7 @@ const Menu = () => {
                 {categoryTable.map((cat) => {
                   return (
                     <>
-                      <i className="nav-link text-danger Sedgwick-font fs-3" onClick={() => filterItems(cat.id)}>{cat.name}</i>
+                      <i className="nav-link text-danger Sedgwick-font fs-3" key={cat.id} onClick={() => filterItems(cat.id)}>{cat.name}</i>
                     </>
                   );
                 })}

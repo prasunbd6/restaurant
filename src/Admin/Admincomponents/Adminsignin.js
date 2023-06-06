@@ -1,90 +1,95 @@
-// Adminsignin.jsx
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import React, { useState } from "react";
-import { NavLink} from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import adminUserLogin from "../../auth/adminUserLogin";
 
-const Adminlogin = () => {
-  const [entry, setEntry] = useState({ email: "", password: "" });
-  const { loginUser } = useAuth();
+const Adminlogin = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleInput = (e) => {
-    setEntry({ ...entry, [e.target.name]: e.target.value });
-  };
+  //const handleInput = (e) => {
+    //setEntry({ ...entry, [e.target.name]: e.target.value });
+  //};
 
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (!entry.email) {
-      toast.warning("Please type your email address");
-    } else if (entry.password.length < 1) {
-      toast.warning("Field couldn't be empty!!!");
-    } else if (entry.password.length < 8) {
-      toast.warning("Please type at least 8 characters for the password");
-    } else {
-        // Sign in with email and password
-        loginUser(entry.email, entry.password)
+      await login(email, password);
+      if (!error) {
+        navigate(from, { replace: true });
+        email("");
+        password("");
+        return;
+      } else {
+        setErrorMessage(error);
+      }
     }
-  };
 
-  return (
-    <>
-      <h1>Admin Login</h1>
-      <div className="container-fluid">
-        <div className="row justify-content-center">
-          <div className="col-md-3">
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={entry.email}
-                  name="email"
-                  type="text"
-                  className="form-control"
-                  placeholder="Type Email Address"
-                />
-              </div>
+    const from = location.state?.from?.pathname || "/admindashboard";
+    const { error, login } = adminUserLogin();
 
-              <div className="mb-3">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={entry.password}
-                  name="password"
-                  type="password"
-                  className="form-control"
-                  placeholder="**********"
-                />
-              </div>
+    return (
+      <>
+        <h1 className="text-center">Admin Login</h1>
+        <div className="container-fluid mt-3">
+          <div className="row justify-content-center">
+            <div className="col-md-3">
+              <form onSubmit={handleLogin}>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    
+                  onChange={(e)=>{setEmail(e.target.value)}}
+                    name="email"
+                    type="text"
+                    className="form-control"
+                    placeholder="Type Email Address"
+                  />
+                </div>
 
-              <div className="d-grid mt-4">
-                <button type="submit" className="btn btn-sm btn-danger">
-                  Submit
-                </button>
-              </div>
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
+                  <input
+                  
+                  onChange={(e)=>{setPassword(e.target.value)}}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    placeholder="**********"
+                  />
+                </div>
+                {error && <p>{errorMessage}</p>}
+                <div className="d-grid mt-4">
+                  <button type="submit" className="btn btn-sm btn-danger">
+                    Submit
+                  </button>
+                </div>
 
-              <div className="d-grid mt-2">
-                <h6 className="text-secondary text-center">
-                  Don't you have any Account?
-                </h6>
-                <NavLink
-                  className="text-center text-info-emphasis text-decoration-none"
-                  to="/adminsignup"
-                >
-                  <b>Sign Up</b>
-                </NavLink>
-              </div>
-            </form>
+                <div className="d-grid mt-2">
+                  <h6 className="text-secondary text-center">
+                    Don't you have any Account?
+                  </h6>
+                  <NavLink
+                    onClick={props.toggleFrom}
+                    className="text-center text-info-emphasis text-decoration-none"
+                  >
+                    <b>Sign Up</b>
+                  </NavLink>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <ToastContainer position="top-center" autoClose={2000} />
-    </>
-  );
-};
+
+        <ToastContainer position="top-center" autoClose={2000} />
+      </>
+    );
+  };
 
 export default Adminlogin;
