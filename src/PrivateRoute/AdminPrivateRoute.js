@@ -1,17 +1,13 @@
 //PrivateRoute.js
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { auth } from "../firebaseConfig";
-
-//import Adminlogin from "../Admin/Admincomponents/Adminsignin"
+import { Navigate, Outlet } from "react-router-dom";
+import { useUserAuthContext } from "../Context/AdminAuthContext";
 
 const AdminPrivateRoute = () => {
-  const location = useLocation();
 
-  return auth.currentUser ? (
-    <Outlet />
-  ) : (
-    <Navigate to="/adminauthentication" state={{ from: location }} replace />
-  );
+  const {user}=useUserAuthContext();
+  //const Authentication = localStorage.getItem("token");
+
+  return user ? <Outlet /> : <Navigate to="/adminauthentication" />;
 };
 
 export default AdminPrivateRoute;

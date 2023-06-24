@@ -48,6 +48,7 @@ const About = () => {
     
             <div className="container mt-3">
             <div className="row justify-content-center">
+            
             <div className="col-md"><img className="img-thumbnail m-1" width="450px" src={stair} alt="" /></div>
             <div className="col-md"><img className="img-thumbnail m-1" width="450px" src={sittingAlone} alt="" /></div>
             <div className="col-md"><img className="img-thumbnail m-1" width="450px" src={environment} alt="" /></div>

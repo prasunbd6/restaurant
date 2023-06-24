@@ -21,7 +21,14 @@
       "user_id": 1
     }
   ],
-  "cart_list": [],
+  "cart_list": [
+    {
+      "id": "2d38c356-16f8-4fb8-839c-f79b232723ea",
+      "menu_id": "2e5d7e9a-e142-48fa-a88b-f6503e645c57",
+      "quantity": "1",
+      "amount": 234
+    }
+  ],
   "category": [
     {
       "id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",

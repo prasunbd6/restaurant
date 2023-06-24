@@ -128,7 +128,7 @@ const Menu = () => {
               return (
                 <>
                   {/* Card  Start*/}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mt-3">
+                  <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mt-3" key={menu.id}>
                     <div className="card">
                       <img src={menu.img} className="card-img-top" alt="..." />
                       <div className="card-body">
