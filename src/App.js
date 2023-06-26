@@ -50,7 +50,9 @@ const App = () => {
       
 
         {/* Admin Section Protected Route Start*/}
+        
         {renderLoginRegisterRoutes()}
+
         <Route element={<AdminPrivateRoute />}>
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/addcategory" element={<Addcategory />} />
