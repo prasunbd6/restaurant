@@ -7,6 +7,7 @@ const Navlink = () => {
     <ul class="list-group pt-3">
     <li><div className="d-grid p-1"> <NavLink to="/admindashboard" className="btn btn-primary">Dashboard</NavLink></div></li>
     <li><div className="d-grid p-1"> <NavLink to="/addcategory" className="btn btn-primary">Add Category</NavLink></div></li>
+    <li><div className="d-grid p-1"> <NavLink to="/adddescription" className="btn btn-primary">Add Description</NavLink></div></li>
     <li><div className="d-grid p-1"> <NavLink to="/additem" className="btn btn-primary">Add Items</NavLink></div></li>
   </ul>
     </>

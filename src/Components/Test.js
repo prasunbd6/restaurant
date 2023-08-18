@@ -1,0 +1,81 @@
+import { useState, useEffect } from "react";
+import TestCategory from "../Slice/TestCategory";
+import TestProduct from "../Slice/TestProduct";
+import CategoryHook from "../Hooks/categoryHook";
+import MenuHook from "../Hooks/menuHook";
+import DescriptionHook from "../Hooks/descriptionHook";
+
+const Test = () => {
+  const [filter, setFilter] = useState([]);
+  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
+
+  //Show Data by Category Operation
+  const fullItems = () => {
+    const updateTable = menuData.map(menuData => {
+      const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
+      const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
+      return {...menuData,cat_name: cat ? cat.name : "",details: des ? des.details : ""};
+    });
+    setFilter(updateTable);
+  };
+
+  //Search Operation
+  const searchFilter = (e) => {
+    const searchText = e.target.value.toLowerCase();
+
+    const updateTable = menuData.map(menuData => {
+      const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
+      const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
+      return {...menuData,cat_name: cat ? cat.name : "",details: des ? des.details : "",};
+    });
+    setFilter(updateTable.filter((menuData) =>menuData.title.toLowerCase().includes(searchText)));
+  };
+
+  const showAllItems = () => {
+    setFilter(fullItems);
+  };
+
+  useEffect(() => {
+    showAllItems();
+    // eslint-disable-next-line
+  }, [categoryData, menuData, descriptionData]);
+
+  return (
+    <>
+      <div className="container-fluid">
+        {/* Search Data */}
+        <div className="row justify-content-center">
+          <div className="col-md-6 mb-2">
+            <input
+              type="search"
+              placeholder="Product Search By Title"
+              className=" form-control"
+              onChange={searchFilter}
+            />
+          </div>
+        </div>
+
+        <div className="row justify-content-center g-2">
+          <div className="col-md-2">
+            {/* Filter Data */}
+            <TestCategory
+              categoryData={categoryData}
+              menuData={menuData}
+              descriptionData={descriptionData}
+              setFilter={setFilter}
+              showAllItems={showAllItems}
+            />
+            {/* Show  Data */}
+          </div>
+          <div className="col-md-10">
+            <TestProduct filter={filter} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Test;

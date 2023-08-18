@@ -1,53 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ImBin, ImList2 } from "react-icons/im";
+import CartlistHook from "../Hooks/cartlistHook";
+//import CategoryHook from "../Hooks/categoryHook";
 
+import MenuHook from "../Hooks/menuHook";
 
 const Cartlist = () => {
-  
-  const [cartList, setCartList] = useState([]);
-  const [menuList, setMenuList] = useState([]);
-  const [categoryList, setcategoryList] = useState([]);
+  const { cartlistData } = CartlistHook(`http://localhost:3001/cart_list`);
+  //const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+
   const [joinedList, setjoinedList] = useState([]);
-
-  //Cart List Table (Function)
-  const cartListFetch = () => {
-    axios
-      .get("http://localhost:3001/cart_list")
-      .then((response) => {
-        setCartList(response.data);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  //Cart List Table (Function)
-  const menuFetch = () => {
-    axios
-      .get("http://localhost:3001/menu")
-      .then((response) => {
-        setMenuList(response.data);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  //Category Table (Function)
-  const categoryFetch = () => {
-    axios
-      .get("http://localhost:3001/category")
-      .then((response) => {
-        setcategoryList(response.data);
-      })
-      .catch((err) => console.log(err));
-  };
 
   // Table joining for fetch Data
   const showAllItemsById = () => {
-    const joinTable = cartList.map((item) => {
-      const menu = menuList.find((targetKey) => targetKey.id === item.menu_id);
-      const cat = categoryList.find( (targetKey) => targetKey.id === item.cat_id );
+
+    const joinTable = cartlistData.map((cartlistData) => 
+    {
+      const menu = menuData.find((menuData) => menuData.id === cartlistData.menu_id);
+     // const cat = categoryData.find((categoryData) => categoryData.id === cartlistData.cat_id);
       return {
-        ...item,
-        menu_name: menu ? menu.title : "", cat_name: cat ? cat.name : ""  
+        ...cartlistData,
+        menu_name: menu ? menu.title : "",
+       // cat_name: cat ? cat.name : "",
       };
       
     });
@@ -59,18 +35,16 @@ const Cartlist = () => {
     axios
       .delete(`http://localhost:3001/cart_list/${id}`)
       .then(() => {
-        cartListFetch();
+        window.location.reload();
+        cartlistData();
       })
       .catch((err) => console.log(err));
   }
 
   useEffect(() => {
-    cartListFetch();
-    menuFetch();
-    categoryFetch();
     showAllItemsById();
     // eslint-disable-next-line
-  }, [cartList, menuList]);
+  }, [menuData]);
 
   // Calculate total amount
   const totalAmount = joinedList.reduce((acc, curr) => acc + curr.amount, 0);
@@ -86,33 +60,21 @@ const Cartlist = () => {
               <thead>
                 <tr className="text-center">
                   <th scope="col">Item</th>
+                  
                   <th scope="col">Quantity</th>
                   <th scope="col">Sub Total</th>
                   <th scope="col">Handle</th>
                 </tr>
               </thead>
               <tbody>
-                {joinedList.map((values) => {
+                {joinedList.map((joinedList,index) => {
                   return (
                     <>
-                      <tr key={values.id} className="text-center">
-                        <th scope="row">{values.menu_name}</th> 
-                        <td>{values.quantity}</td>
-                        <td>{values.amount}</td>
-                        <td>
-                        <i className="p-1"> <ImList2/> </i>
-                          <i className="p-1"
-                            onClick={() => {
-                              if (
-                                window.confirm("Are you sure to delete data?")
-                              ) {
-                                handleDelete(values.id);
-                              }
-                            }}
-                          >
-                            <ImBin />
-                          </i>
-                        </td>
+                      <tr key={index} className="text-center">
+                        <th scope="row">{joinedList.menu_name}</th>
+                        <td>{joinedList.quantity}</td>
+                        <td>{joinedList.amount}</td>
+                        <td><i className="p-1"><ImList2 /></i><i className="p-1"onClick={() =>{if (window.confirm("Are you sure to delete data?")){handleDelete(joinedList.id)}}}><ImBin /></i></td>
                       </tr>
                     </>
                   );
@@ -126,7 +88,9 @@ const Cartlist = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-            <span><h2>Total : {totalAmount}</h2></span>
+            <span>
+              <h2>Total : {totalAmount}</h2>
+            </span>
           </div>
         </div>
       </div>

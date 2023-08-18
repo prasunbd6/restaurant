@@ -110,7 +110,7 @@
 
 .tbl-Scroll {
   height: 400px;
-  overflow-y: scroll;
+  overflow: scroll;
   scroll-behavior: smooth;
 }
 

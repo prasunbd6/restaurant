@@ -1,19 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import Navigationlink from "./Navlink";
-import { v4 as uuidv4 } from "uuid";
+import { useState, useEffect } from "react";
 import { ImBin, ImList2 } from "react-icons/im";
+import DescriptionHook from "../../Hooks/descriptionHook";
+import Navigationlink from "./Navlink";
+import axios from "axios";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
-import CategoryHook from "../../Hooks/categoryHook";
 
-const Addcategory = () => {
+const Adddescription = () => {
+  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
   const navigate = useNavigate();
-  const randomId = uuidv4();
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
-  const [loading, setLoading] = useState(false); // Set Animation
-
-  const [inputCategory, setInputCategory] = useState({id: randomId,name: ""});
+  const [loading, setLoading] = useState(false);
+  const [description, setDescription] = useState("");
 
   // Spinner Function
   const loadData = () => {
@@ -26,7 +23,7 @@ const Addcategory = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/category", inputCategory)
+      .post(`http://localhost:3001/description`, { description: description })
       .then(() => {
         navigate("/admindashboard");
       })
@@ -35,46 +32,38 @@ const Addcategory = () => {
       });
   };
 
-  const handelInput = (e) => {
-    const { name, value } = e.target;
-    setInputCategory({ ...inputCategory, [name]: value });
+  // Category list data delete by id
+  const handelDelete = (id) => {
+    axios
+      .delete(`http://localhost:3001/description/${id}`)
+      .then(() => {
+        window.location.reload(); // Reload the page
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     loadData();
   }, []);
 
-  // Category list data delete by id
-  const handelDelete = (id) => {
-    axios
-      .delete(`http://localhost:3001/category/${id}`)
-      .then(() => {
-        navigate("/admindashboard");
-        //window.location.reload(); // Reload the page
-      })
-      .catch((err) => console.log(err));
-  };
-
   return (
     <>
       <div className="container-fluid">
         <div className="row justify-content-between">
-
-          <div className="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-xxs-12">
+          <div className="col-md-2">
             <Navigationlink />
           </div>
 
           {/* Input Start */}
-          <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-xxs-12">
+          <div className="col-md-3 mt-5">
             <form onSubmit={handelSubmit}>
               <div className="input-group mb-3">
-                <span className="input-group-text">Category Name</span>
+                <span className="input-group-text">Description</span>
                 <input
-                  onChange={handelInput}
-                  value={inputCategory.name}
-                  name="name"
+                  onChange={(e) => setDescription(e.target.value)}
+                  name="description"
                   type="text"
-                  placeholder="type category"
+                  placeholder="type description"
                   className="form-control"
                 />
                 <button type="submit" className="btn btn-lg btn-primary m-1">
@@ -85,33 +74,34 @@ const Addcategory = () => {
           </div>
           {/* Input Close */}
 
-          <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <h3 className="text-primary text-center">Table List Of Category</h3>
-            {categoryData.length > 0 ? (
+          <div className="col-md-4 col-sm-12">
+            <h3 className="text-primary text-center">
+              Table List Of Description
+            </h3>
+            {descriptionData.length > 0 ? (
               <div className="tbl-Scroll">
-                <table className="table">
+                <table className="table mt-3">
                   <thead>
                     <tr>
                       <th scope="col" className="text-center fs-4">
-                        Category Name
+                        Description
                       </th>
                       <th scope="col" className="text-center fs-4">
                         Handle
                       </th>
                     </tr>
                   </thead>
-                  
                   <tbody>
-                    {categoryData.map((categoryData) => {
+                    {descriptionData.map((descriptionData, index) => {
                       return (
                         <>
-                          <tr key={categoryData.id}>
-                            <td className="text-center fs-4">
-                              {categoryData.name}
+                          <tr key={descriptionData.id}>
+                            <td className="text-center fs-4" key={index}>
+                              {descriptionData.details}
                             </td>
                             <td className="text-center">
                               <NavLink
-                                to={`/editcategory/${categoryData.id}`}
+                                to={`/editcategory/${descriptionData.id}`}
                                 className="fs-3 m-2"
                               >
                                 <ImList2 />
@@ -123,7 +113,7 @@ const Addcategory = () => {
                                       "Are you sure to delete data?"
                                     )
                                   ) {
-                                    handelDelete(categoryData.id);
+                                    handelDelete(descriptionData.id);
                                   }
                                 }}
                                 className="fs-3 m-2"
@@ -141,7 +131,7 @@ const Addcategory = () => {
             ) : (
               <>
                 <p className="text-Center">
-                  {loading}{" "}
+                  {loading}
                   <BarLoader
                     color="#cfa9db"
                     height={5}
@@ -159,4 +149,4 @@ const Addcategory = () => {
   );
 };
 
-export default Addcategory;
+export default Adddescription;

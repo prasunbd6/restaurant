@@ -23,210 +23,240 @@
   ],
   "cart_list": [
     {
-      "id": "2d38c356-16f8-4fb8-839c-f79b232723ea",
-      "menu_id": "2e5d7e9a-e142-48fa-a88b-f6503e645c57",
+      "menu_id": 13,
+      "quantity": "3",
+      "amount": 210,
+      "id": 4
+    },
+    {
+      "menu_id": 18,
       "quantity": "1",
-      "amount": 234
+      "amount": 405,
+      "id": 5
+    },
+    {
+      "menu_id": 21,
+      "quantity": "3",
+      "amount": 99,
+      "id": 6
     }
   ],
   "category": [
     {
-      "id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "id": 1,
       "name": "Breakfast"
     },
     {
       "name": "Juice",
-      "id": "427b08b8-0f6e-4a55-b72a-4d0436331230"
+      "id": 2
     },
     {
       "name": "Lunch",
-      "id": "bb303d20-1681-4018-bf7a-728f60d83787"
+      "id": 3
     },
     {
-      "id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "id": 4,
       "name": "Dinner"
     },
     {
-      "id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
+      "id": 5,
       "name": "Snacks"
+    }
+  ],
+  "description": [
+    {
+      "details": "Available from 2 PM to 4 PM",
+      "id": 1
+    },
+    {
+      "details": "Available from 10 AM to 7 PM",
+      "id": 2
+    },
+    {
+      "details": "Available from 8:00 PM to 11:00 PM",
+      "id": 3
+    },
+    {
+      "details": "Available from 1:00 PM to 3:00 PM",
+      "id": 4
     }
   ],
   "menu": [
     {
-      "id": "a5ad943f-1e42-498f-9756-a7f0d78277d0",
+      "id": 22,
       "title": "Ash",
-      "cat_id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
+      "cat_id": 5,
       "price": "20",
       "img": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "834407db-92f5-4636-a2d0-34dc8e00244a",
+      "id": 21,
       "title": "Robin Stickel",
-      "cat_id": "9363c2ab-9d2e-4272-a005-8767bed61a26",
+      "cat_id": 5,
       "price": "33",
       "img": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "2e5d7e9a-e142-48fa-a88b-f6503e645c57",
+      "id": 20,
       "title": " Julian Jagtenberg",
-      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "cat_id": 1,
       "price": "234",
       "img": "https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "3e8259cd-342d-4a06-8829-47f2bdbe7e9a",
+      "id": 19,
       "title": " Emrah Tolu",
-      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "cat_id": 1,
       "price": "170",
       "img": "https://images.pexels.com/photos/2662875/pexels-photo-2662875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "8eea344e-e197-4a4d-b3fc-dc7715c0919d",
+      "id": 18,
       "title": "Life Of Pix",
-      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "cat_id": 1,
       "price": "405",
       "img": "https://images.pexels.com/photos/101533/pexels-photo-101533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "fb1a2aaa-6e58-4146-8404-2e916b1cc15d",
+      "id": 17,
       "title": "Jane Doan",
-      "cat_id": "0257bcb6-a688-4002-9ac1-ab97bbae63a5",
+      "cat_id": 1,
       "price": "36",
       "img": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "687eb1b3-35a6-46ac-beaf-8177ab8c7c3a",
+      "id": 16,
       "title": "PhotoMIX Company",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "30",
       "img": "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "35a37d62-42d6-4c81-9540-aca427353546",
+      "id": 15,
       "title": "ROMAN ODINTSOV",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "30",
       "img": "https://images.pexels.com/photos/4955257/pexels-photo-4955257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "119c9a4d-1a94-4080-8310-f8187d87a364",
+      "id": 14,
       "title": "iStock",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "40",
       "img": "https://media.istockphoto.com/id/641975492/photo/three-fruits-and-vegetables-detox-drinks.jpg?s=1024x1024&w=is&k=20&c=RBHmlO1e2yOpsAPLf6JVNCXAIE1gEq9U6wHfapNI4_k=",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "f53579ff-9edc-414a-b1f9-a8c903da5c5f",
+      "id": 13,
       "title": "fresh fruits and vegetables juices",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "70",
       "img": "https://media.istockphoto.com/id/1253099922/photo/assortment-of-fresh-fruits-and-vegetables-juices-in-rainbow-colors.jpg?s=2048x2048&w=is&k=20&c=pGEuZ97yWrGP1sUFpke4rJH6_9Wj98PwilWQj6ESyS4=",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "91ebe53d-4113-48ed-bf5e-f26aa23c8eaf",
+      "id": 12,
       "title": " Polina Tankilevitch",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "45",
       "img": "https://images.pexels.com/photos/4443445/pexels-photo-4443445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     },
     {
-      "id": "f67c4161-7bee-4ca4-b0a9-16a26ee367cf",
+      "id": 11,
       "title": "Ella Olsson",
-      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "cat_id": 3,
       "price": "170",
       "img": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 1:00 PM to 3:00 PM"
+      "des_id": 4
     },
     {
-      "id": "a9a08216-3295-4330-8daa-d8759f50f416",
+      "id": 10,
       "title": "fauxels",
-      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "cat_id": 3,
       "price": "200",
       "img": "https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 1:00 PM to 3:00 PM"
+      "des_id": 4
     },
     {
-      "id": "eadcb668-1585-4378-8d19-fe5f27963c5b",
+      "id": 9,
       "title": "Lisa Fotios",
-      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "cat_id": 3,
       "price": "210",
       "img": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 1:00 PM to 3:00 PM"
+      "des_id": 4
     },
     {
-      "id": "4dd69a64-11dd-4628-8198-4b30efce1c45",
+      "id": 8,
       "title": " Ella Olsson",
-      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "cat_id": 3,
       "price": "220",
       "img": "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 1:00 PM to 3:00 PM"
+      "des_id": 4
     },
     {
-      "id": "e1c1a8dc-3547-4f45-a654-00ff2a24836c",
+      "id": 7,
       "title": "Chan Walrus",
-      "cat_id": "bb303d20-1681-4018-bf7a-728f60d83787",
+      "cat_id": 3,
       "price": "220",
       "img": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 1:00 PM to 3:00 PM"
+      "des_id": 4
     },
     {
-      "id": "a660b22e-7eaa-4fc1-9b74-76ea002ed00a",
+      "id": 6,
       "title": "Pixabay Pixabay",
-      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "cat_id": 4,
       "price": "300",
       "img": "https://images.pexels.com/photos/262882/pexels-photo-262882.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "description": "Available from 8:00 PM to 11:00 PM"
+      "des_id": 3
     },
     {
-      "id": "1664802e-e724-4ee5-9c5f-76913954dfb3",
+      "id": 5,
       "title": " Adrienn",
-      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "cat_id": 4,
       "price": "300",
       "img": "https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "description": "Available from 8:00 PM to 11:00 PM"
+      "des_id": 3
     },
     {
-      "id": "abb08c3c-8d02-4c18-902c-28f2916a132a",
+      "id": 4,
       "title": "Lisa Fotios",
-      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "cat_id": 4,
       "price": "170",
       "img": "https://images.pexels.com/photos/1655329/pexels-photo-1655329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 8:00 PM to 11:00 PM"
+      "des_id": 3
     },
     {
-      "id": "110e675e-7027-49e5-a9f3-58e71b9dbe5f",
+      "id": 3,
       "title": "Pixabay",
-      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "cat_id": 4,
       "price": "120",
       "img": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 8:00 PM to 11:00 PM"
+      "des_id": 3
     },
     {
-      "id": "946aa230-6c00-4b83-8ae9-f44ce359b001",
+      "id": 2,
       "title": "Janko Ferlic",
-      "cat_id": "d79a8465-1f95-4d11-9b53-7fdd3bddec30",
+      "cat_id": 4,
       "price": "160",
       "img": "https://images.pexels.com/photos/590477/pexels-photo-590477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 8:00 PM to 11:00 PM"
+      "des_id": 3
     },
     {
-      "id": "e346c998-a3b7-4f85-855e-86cd97476905",
+      "id": 1,
       "title": "Naim Benjelloun",
-      "cat_id": "427b08b8-0f6e-4a55-b72a-4d0436331230",
+      "cat_id": 2,
       "price": "70",
       "img": "https://images.pexels.com/photos/2110923/pexels-photo-2110923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "description": "Available from 10 AM to 7 PM"
+      "des_id": 2
     }
   ]
 }
