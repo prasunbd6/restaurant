@@ -13,16 +13,17 @@ import {IoLogoWhatsapp} from "react-icons/io"
 const Footer = () => {
   return (
     <>
-      <div className="container-fluid bg-light mt-5 mb-4">
+      <div className="container-fluid bg-light mt-5 mb-1">
         <div className="row justify-content-center">
           {/* Logo */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 ">
-            <div className="container-fluid">
-              <img src={logo} alt="" height="200px" className="image-fluid" />
-            </div>
+          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-xxs-12">
+          <div className="text-center">
+          <img src={logo} alt="" height="200px"/>
+          </div>    
+          
           </div>
           {/* Address */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 ">
+          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-xxs-12">
             <div className="mt-3 fs-4">
             <span className="fs-1 text-secondary"><FaHome/> </span>
               <b>Address : </b> <p className="Smooch-font text-dark fs-3"> FT # B2, 423 / B Ashraf Ali Road, Patharghata, Kotowali, Chattogram - 4000. </p>
@@ -31,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
         {/* Order */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 col-xxs-12">
           
           {/* Order Information */}
           <div className="mt-3 ms-5 fs-4">

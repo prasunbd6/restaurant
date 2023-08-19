@@ -11,26 +11,22 @@ const Test = () => {
   const { menuData } = MenuHook(`http://localhost:3001/menu`);
   const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
 
+
+  const joinTable = menuData.map(menuData => {
+    const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
+    const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
+    return {...menuData,cat_name: cat ? cat.name : "",details: des ? des.details : ""};
+  });
+
   //Show Data by Category Operation
-  const fullItems = () => {
-    const updateTable = menuData.map(menuData => {
-      const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
-      const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
-      return {...menuData,cat_name: cat ? cat.name : "",details: des ? des.details : ""};
-    });
-    setFilter(updateTable);
+  const fullItems = () => { 
+    setFilter(joinTable);
   };
 
   //Search Operation
   const searchFilter = (e) => {
     const searchText = e.target.value.toLowerCase();
-
-    const updateTable = menuData.map(menuData => {
-      const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
-      const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
-      return {...menuData,cat_name: cat ? cat.name : "",details: des ? des.details : "",};
-    });
-    setFilter(updateTable.filter((menuData) =>menuData.title.toLowerCase().includes(searchText)));
+    setFilter(joinTable.filter(joinTable =>joinTable.title.toLowerCase().includes(searchText)));
   };
 
   const showAllItems = () => {
@@ -66,6 +62,7 @@ const Test = () => {
               descriptionData={descriptionData}
               setFilter={setFilter}
               showAllItems={showAllItems}
+             
             />
             {/* Show  Data */}
           </div>

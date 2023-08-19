@@ -4,6 +4,7 @@ const TestCategory = ({
   descriptionData,
   setFilter,
   showAllItems,
+  
 }) => {
   const handleCat = (catID) => {
     if (catID === "all") {
@@ -12,8 +13,7 @@ const TestCategory = ({
       const filteredData = menuData.filter(menuData => menuData.cat_id === catID);
 
       // Fetch and attach category name and description details to filtered data
-      
-      const updateData = filteredData.map(menuData => {
+      const joinTable = filteredData.map(menuData => {
         const cat = categoryData.find(categoryData => categoryData.id === menuData.cat_id);
         const des = descriptionData.find(descriptionData => descriptionData.id === menuData.des_id);
         return {
@@ -23,7 +23,7 @@ const TestCategory = ({
         };
       });
       //console.log(updateData)
-      setFilter(updateData);
+      setFilter(joinTable);
     }
   };
 

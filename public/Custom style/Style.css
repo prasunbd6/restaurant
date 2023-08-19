@@ -150,3 +150,10 @@
   background: radial-gradient( rgb(62, 62, 88), rgb(148, 149, 158),rgb(255, 255, 255));
   border-radius: 20px .50px 30px;
 }
+
+/* Product Area scroll effect*/
+.product-overflow {
+  overflow-y: scroll;
+  height: 500px;
+  width: auto;
+}

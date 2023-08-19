@@ -52,13 +52,13 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-
+{/* 
             <li className="nav-item  p-2">
               <NavLink to="/test" className="nav-link ">
                 Test
               </NavLink>
             </li>
-
+*/}
             {!user && (
               <>
                 <li className="nav-item  p-2">
@@ -81,8 +81,9 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      {/* 
       <hr className="border border-secondary border-1 opacity-25" />
-      <hr className="border border-light border-5 opacity-75" />
+      <hr className="border border-light border-5 opacity-75" />*/}
     </>
   );
 };

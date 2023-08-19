@@ -1,45 +1,32 @@
-import React from "react";
-import MenuHook from "../Hooks/menuHook";
 
-const CategoryHome = ({categoryData,showAllItems,setFilteredData,}) => {
-
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+const CategoryHome = ({categoryData,showAllItems,setFilteredData,joinTable}) => {
 
   const handleCategoryClick = (categoryId) => {
     if (categoryId === "all") {showAllItems()} 
     else {
-      const filteredItems = menuData.filter(menuData=> menuData.cat_id === categoryId);
+      const filteredItems = joinTable.filter(joinTable=> joinTable.cat_id === categoryId);
       setFilteredData(filteredItems);
     }
   };
 
   return (
     <>
-      <ul className="nav justify-content-center">
-        <li className="nav-item">
-          <i
-            className="nav-link text-danger Sedgwick-font fs-3"
-            onClick={() => handleCategoryClick(`all`)}
-          >
-            All
-          </i>
-        </li>
 
-        {categoryData.map(categoryData => {
-          return (
-            <>
-              <li className="nav-item" key={categoryData.id}>
-                <i
-                  className="nav-link text-danger Sedgwick-font fs-3"
-                  onClick={() => handleCategoryClick(categoryData.id)}
-                >
-                  {categoryData.name}
-                </i>
-              </li>
-            </>
-          );
-        })}
-      </ul>
+    <div className="list-group">
+    
+    
+    {
+      categoryData.map(categoryData=>{
+        return(
+          <>
+          <button type="button" className="list-group-item list-group-item-action Sedgwick-font fs-5 text-danger"  key={categoryData.id} onClick={()=> handleCategoryClick(categoryData.id)}>{categoryData.name}</button>
+          </>
+        )
+      })
+    }
+    <button type="button" className="list-group-item list-group-item-action Sedgwick-font fs-5 text-danger" onClick={() => handleCategoryClick(`all`)}>All</button>
+  </div>
+      
     </>
   );
 };

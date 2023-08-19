@@ -24,21 +24,15 @@
   "cart_list": [
     {
       "menu_id": 13,
-      "quantity": "3",
-      "amount": 210,
-      "id": 4
-    },
-    {
-      "menu_id": 18,
-      "quantity": "1",
-      "amount": 405,
-      "id": 5
+      "quantity": "23",
+      "amount": 1610,
+      "id": 1
     },
     {
       "menu_id": 21,
       "quantity": "3",
       "amount": 99,
-      "id": 6
+      "id": 2
     }
   ],
   "category": [

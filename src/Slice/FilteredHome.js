@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 const FilteredHome = ({ filteredData }) => {
+
+
+
   return (
     <>
       {filteredData.map((filteredData, index) => {
@@ -8,7 +11,7 @@ const FilteredHome = ({ filteredData }) => {
           <>
             {/* Card  Start*/}
             <div
-              className="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-12 col-xs-12 col-xxs-12 mt-3"
+              className="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-12 col-xs-12 col-xxs-12"
               key={index}
             >
               <div className="card">
@@ -32,9 +35,9 @@ const FilteredHome = ({ filteredData }) => {
                   </span>
                   <NavLink
                     to={`/order/${filteredData.id}`}
-                    className="btn btn-warning btn-sm mt-2 mb-2 mx-2 position-absolute bottom-0 end-0"
+                    className="btn btn-warning btn-sm mt-2 mb-1 mx-1 position-absolute bottom-0 end-0"
                   >
-                    Add to Order
+                    Order
                   </NavLink>
                 </div>
               </div>
