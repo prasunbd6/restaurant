@@ -1,31 +1,21 @@
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navigationlink from "./Navlink";
 
-import { BarLoader } from "react-spinners";
 import CategoryHook from "../../Hooks/categoryHook";
 import MenuHook from "../../Hooks/menuHook";
+import DescriptionHook from "../../Hooks/descriptionHook";
+
 import AddItemAdmin from "../../Slice/AddItemAdmin";
 
 const Additem = () => {
-  const randomId = uuidv4();
-
   const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
   const { menuData } = MenuHook(`http://localhost:3001/menu`);
-
+  
   const [mergeTable, setMergeTable] = useState([]);
-
-  const [loading, setLoading] = useState(false); // Set Animation
-  const [entry, setEntry] = useState({
-    id: randomId,
-    title: "",
-    cat_id: "",
-    price: "",
-    img: "",
-    description: "",
-  });
+  const [entry, setEntry] = useState({title: "",cat_id: "",price: "",img: "",des_id: ""});
 
   // eslint-disable-next-line
   const { id } = useParams();
@@ -36,7 +26,7 @@ const Additem = () => {
     axios
       .delete(`http://localhost:3001/menu/${id}`)
       .then(() => {
-        window.location.reload(); // Reload the page
+        navigate("/admindashboard");
       })
       .catch((err) => console.log(err));
   };
@@ -47,7 +37,7 @@ const Additem = () => {
     axios
       .post("http://localhost:3001/menu", entry)
       .then(() => {
-        navigate("/admin");
+        navigate("/admindashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -57,34 +47,31 @@ const Additem = () => {
   // Input Data Handel
   const handelInput = (e) => {
     const { name, value } = e.target;
-    setEntry({ ...entry, [name]: value });
+    // Convert the selected values(String) to numbers
+    const convertedValue = name === "cat_id" || name === "des_id" || name === "price" ? +value : value;
+    setEntry({ ...entry, [name]: convertedValue });
   };
 
-  // Spinner Function
-  const loadData = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  };
+  // Menu table Join with category id and description id
+  const joinTable = menuData.map((menu) => {
+    const cat = categoryData.find(categoryData => categoryData.id === menu.cat_id);
+    const des = descriptionData.find(descriptionData => descriptionData.id === menu.des_id);
+    return {
+      ...menu,
+      cat_name: cat ? cat.name : "",
+      des_details: des ? des.details : "",
+    };
+  });
 
-  // Menu table show by category id
   const showDatabyid = () => {
-    const update = menuData.map((item) => {
-      const cat = categoryData.find(
-        (targetKey) => targetKey.id === item.cat_id
-      );
-      return { ...item, cat_name: cat ? cat.name : "" };
-    });
-    setMergeTable(update);
+    setMergeTable(joinTable);
   };
 
   //Must use in this way
   useEffect(() => {
     showDatabyid();
-    loadData();
     // eslint-disable-next-line
-  }, [categoryData, menuData]);
+  }, [categoryData, menuData, descriptionData]);
 
   return (
     <>
@@ -94,9 +81,10 @@ const Additem = () => {
             <Navigationlink />
           </div>
 
-          <div className="col-md-2  mt-4">
+          <div className="col-md-2 mt-4">
             {/* Input Start */}
             <form onSubmit={handleSubmit}>
+              {/* Title */}
               <div className="mb-3">
                 <label className="form-label">Title</label>
                 <input
@@ -108,13 +96,14 @@ const Additem = () => {
                   placeholder="type title"
                 />
               </div>
-
-              <div class="input-group mb-3">
+              {/* Category */}
+              <div className="mb-3">
+                <label className="form-label">Category</label>
                 <select
-                  className="form-select"
                   value={entry.cat_id}
                   onChange={handelInput}
                   name="cat_id"
+                  className="form-select"
                 >
                   <option>select category</option>
                   {categoryData.map((categoryData) => {
@@ -129,6 +118,7 @@ const Additem = () => {
                 </select>
               </div>
 
+              {/* Price */}
               <div className="mb-3">
                 <label className="form-label">Price</label>
                 <input
@@ -141,6 +131,7 @@ const Additem = () => {
                 />
               </div>
 
+              {/* Image Link */}
               <div className="mb-3">
                 <label className="form-label">Image Link</label>
                 <input
@@ -155,14 +146,26 @@ const Additem = () => {
 
               <div className="mb-3">
                 <label className="form-label">Description</label>
-                <input
+                <select
+                  value={entry.des_id}
                   onChange={handelInput}
-                  value={entry.description}
-                  name="description"
-                  type="text"
-                  className="form-control"
-                  placeholder="type description"
-                />
+                  name="des_id"
+                  className="form-select"
+                >
+                  <option>select description</option>
+                  {descriptionData.map((descriptionData) => {
+                    return (
+                      <>
+                        <option
+                          key={descriptionData.id}
+                          value={descriptionData.id}
+                        >
+                          {descriptionData.details}
+                        </option>
+                      </>
+                    );
+                  })}
+                </select>
               </div>
 
               <div className="d-grid mt-4">
@@ -176,26 +179,8 @@ const Additem = () => {
 
           <div className="col-md m-2  mt-3">
             <h2 className="text-primary text-center">Food Item List</h2>
-            {mergeTable.length > 0 ? (
-              <AddItemAdmin
-                mergeTable={mergeTable}
-                handelDelete={handelDelete}
-              />
-            ) : (
-              <>
-                <p className="text-Center">
-                  {loading}):(
-                  <BarLoader
-                    color="#cfa9db"
-                    height={5}
-                    margin={4}
-                    speedMultiplier={0.8}
-                    width={500}
-                  />
-                  )
-                </p>
-              </>
-            )}
+
+            <AddItemAdmin mergeTable={mergeTable} handelDelete={handelDelete} />
           </div>
         </div>
       </div>

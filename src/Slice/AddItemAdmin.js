@@ -39,7 +39,7 @@ const AddItemAdmin = ({ mergeTable, handelDelete }) => {
                     <td className="text-center">{mergeTable.title}</td>
                     <td className="text-center">{mergeTable.cat_name}</td>
                     <td className="text-center">{mergeTable.price}</td>
-                    <td className="text-center">{mergeTable.description}</td>
+                    <td className="text-center">{mergeTable.des_details}</td>
                     <td className="text-center">
                       <NavLink
                         to={`/edititem/${mergeTable.id}`}

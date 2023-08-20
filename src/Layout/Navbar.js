@@ -52,6 +52,12 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+
+            <li className="nav-item  p-2">
+              <NavLink to="/Testsection" className="nav-link ">
+                Test Section
+              </NavLink>
+            </li>
 {/* 
             <li className="nav-item  p-2">
               <NavLink to="/test" className="nav-link ">

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Editcategory = () => {
+  
   const { id } = useParams();
   const navigate = useNavigate();
   const [categoryTable, setCategoryTable] = useState({ id: "", name: "" });
@@ -30,7 +31,7 @@ const Editcategory = () => {
       .put(`http://localhost:3001/category/${id}`, categoryTable) // Here "entry" is data table
       .then((response) => {
         // handle success
-        navigate("/addcategory");
+        navigate("/admindashboard");
       })
       .catch((error) => {
         // handle error

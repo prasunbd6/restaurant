@@ -14,7 +14,7 @@ const FilteredHome = ({ filteredData }) => {
               className="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-12 col-xs-12 col-xxs-12"
               key={index}
             >
-              <div className="card">
+              <div className="card mt-3">
                 <img
                   src={filteredData.img}
                   className="card-img-top" width="50px" height="50px"

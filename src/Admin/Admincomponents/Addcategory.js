@@ -2,18 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Navigationlink from "./Navlink";
-import { v4 as uuidv4 } from "uuid";
+//import { v4 as uuidv4 } from "uuid";
 import { ImBin, ImList2 } from "react-icons/im";
 import { BarLoader } from "react-spinners";
 import CategoryHook from "../../Hooks/categoryHook";
 
 const Addcategory = () => {
   const navigate = useNavigate();
-  const randomId = uuidv4();
+  //const randomId = uuidv4();
   const { categoryData } = CategoryHook(`http://localhost:3001/category`);
   const [loading, setLoading] = useState(false); // Set Animation
 
-  const [inputCategory, setInputCategory] = useState({id: randomId,name: ""});
+  const [inputCategory, setInputCategory] = useState({id:"",name: ""});
 
   // Spinner Function
   const loadData = () => {

@@ -3,30 +3,21 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navigationlink from "./Navlink";
 
+import CategoryHook from "../../Hooks/categoryHook";
+import DescriptionHook from "../../Hooks/descriptionHook";
+
 const Edititem = () => {
+
+  
+  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
+
+
   const { id } = useParams();
   const navigate = useNavigate();
-  const [categoryTable, setCategoryTable] = useState([]);
-  const [menuTable, setMenuTable] = useState({
-    id: "",
-    title: "",
-    cat_id: "",
-    price: "",
-    img: "",
-    description: ""
-  });
+  const [menuTable, setMenuTable] = useState({ id: "", title: "", cat_id: "", price: "", img: "", des_id: ""});
 
-  // // Show Data From Category ID
-  const category = () => {
-    axios
-      .get("http://localhost:3001/category") // Here "category" is data table
-      .then((response) => {
-        setCategoryTable(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      }, []);
-  };
+
 
   // Show Data From Menu
   const menu = () => {
@@ -44,7 +35,6 @@ const Edititem = () => {
   };
 
   useEffect(() => {
-    category();
     menu();
     // eslint-disable-next-line
   }, [id]);
@@ -55,7 +45,7 @@ const Edititem = () => {
       .put(`http://localhost:3001/menu/${id}`,menuTable) // Here "entry" is data table
       .then((response) => {
         // handle success
-        navigate("/additem");
+        navigate("/admindashboard");
       })
       .catch((error) => {
         // handle error
@@ -64,7 +54,10 @@ const Edititem = () => {
   };
 
   const handleChange = (e) => {
-    setMenuTable({ ...menuTable, [e.target.name]: e.target.value });
+    const {name,value}=e.target
+     // Convert the selected values(string) to numbers
+  const convertedValue = name === "cat_id" || name === "des_id" || name==="price" ? +value : value;
+    setMenuTable({ ...menuTable, [name]: convertedValue });
   };
 
   return (
@@ -80,29 +73,17 @@ const Edititem = () => {
             <form onSubmit={handleUpdate}>
               <div className="mb-3">
                 <label className="form-label">Title</label>
-                <input
-                name="title"
-                  onChange={handleChange}
-                  value={menuTable.title}
-                  type="text"
-                  className="form-control"
-                />
+                <input name="title" onChange={handleChange} value={menuTable.title} type="text" className="form-control"/>
               </div>
 
-              <div class="input-group mb-3">
-                <select
-                name="cat_id"
-                onChange={handleChange}
-                value={menuTable.cat_id}
-                className="form-select" 
-                >
+              <div class="mb-3">
+              <label className="form-label">Category</label>
+                <select name="cat_id" onChange={handleChange} value={menuTable.cat_id} className="form-select">
                   <option>select category</option>
-                  {categoryTable.map((values) => {
+                  {categoryData.map(categoryData => {
                     return (
                       <>
-                        <option key={values.id} value={values.id}>
-                          {values.name}
-                        </option>
+                        <option key={categoryData.id} value={categoryData.id}>{categoryData.name}</option>
                       </>
                     );
                   })}
@@ -111,35 +92,26 @@ const Edititem = () => {
 
               <div className="mb-3">
                 <label className="form-label">Price</label>
-                <input
-                name="price"
-                  onChange={handleChange}
-                  value={menuTable.price}
-                  type="text"
-                  className="form-control"
-                />
+                <input name="price" onChange={handleChange} value={menuTable.price} type="text" className="form-control" />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">Image Link</label>
-                <input
-                name="img"
-                  onChange={handleChange}
-                  value={menuTable.img}
-                  type="text"
-                  className="form-control"
-                />
+                <input name="img" onChange={handleChange} value={menuTable.img} type="text" className="form-control" />
               </div>
 
-              <div className="mb-3">
-                <label className="form-label">Description</label>
-                <input
-                name="description"
-                  onChange={handleChange}
-                  value={menuTable.description}
-                  type="text"
-                  className="form-control"
-                />
+              <div class="mb-3">
+              <label className="form-label">Description</label>
+                <select name="des_id" onChange={handleChange} value={menuTable.des_id} className="form-select">
+                  <option>select description</option>
+                  {descriptionData.map(descriptionData => {
+                    return (
+                      <>
+                        <option key={descriptionData.id} value={descriptionData.id}>{descriptionData.details}</option>
+                      </>
+                    );
+                  })}
+                </select>
               </div>
 
               <div className="d-grid mt-4">

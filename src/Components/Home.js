@@ -14,6 +14,7 @@ const Home = () => {
   const { menuData } = MenuHook(`http://localhost:3001/menu`);
 
   const [loading, setLoading] = useState(false); // Set Animation
+  
   const [filteredData, setFilteredData] = useState([]); // Catch Category wise data (Filter Method) from Database
 
   // Join Table

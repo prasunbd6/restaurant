@@ -157,3 +157,10 @@
   height: 500px;
   width: auto;
 }
+
+/* Product Area scroll effect*/
+.section-overflow {
+  overflow-y: scroll;
+  height: 500px;
+  width: auto;
+}

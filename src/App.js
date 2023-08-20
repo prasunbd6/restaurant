@@ -17,6 +17,9 @@ import Adddescription from "./Admin/Admincomponents/Adddescription";
 import Additem from "./Admin/Admincomponents/Additem";
 import Editcategory from "./Admin/Admincomponents/Editcategory";
 import Edititem from "./Admin/Admincomponents/Edititem";
+import Editdescription from "./Admin/Admincomponents/Editdescription";
+import Testsection from "./Components/Testsection";
+
 
 //For admin authentication  Route
 import AdminPrivateRoute from "./PrivateRoute/AdminPrivateRoute";
@@ -49,6 +52,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/test" element={<Test/>} />
         <Route path="/customersignin" element={<Customersignin />} />
+        <Route path="/testsection" element={<Testsection/>} />
         
       
 
@@ -63,6 +67,7 @@ const App = () => {
           <Route path="/editcategory/:id" element={<Editcategory />} />
           <Route path="/additem" element={<Additem />} />
           <Route path="/edititem/:id" element={<Edititem />} />
+<Route path="/editdescription/:id" element={<Editdescription/>} />
           <Route path="*" element={<Error />} />
         </Route>
 

@@ -10,7 +10,7 @@ const Adddescription = () => {
   const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState({details:""});
 
   // Spinner Function
   const loadData = () => {
@@ -23,7 +23,7 @@ const Adddescription = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:3001/description`, { description: description })
+      .post(`http://localhost:3001/description`, { details: description })
       .then(() => {
         navigate("/admindashboard");
       })
@@ -37,7 +37,7 @@ const Adddescription = () => {
     axios
       .delete(`http://localhost:3001/description/${id}`)
       .then(() => {
-        window.location.reload(); // Reload the page
+        navigate("/admindashboard");
       })
       .catch((err) => console.log(err));
   };
@@ -61,7 +61,7 @@ const Adddescription = () => {
                 <span className="input-group-text">Description</span>
                 <input
                   onChange={(e) => setDescription(e.target.value)}
-                  name="description"
+                  name="details"
                   type="text"
                   placeholder="type description"
                   className="form-control"
@@ -101,7 +101,7 @@ const Adddescription = () => {
                             </td>
                             <td className="text-center">
                               <NavLink
-                                to={`/editcategory/${descriptionData.id}`}
+                                to={`/editdescription/${descriptionData.id}`}
                                 className="fs-3 m-2"
                               >
                                 <ImList2 />
