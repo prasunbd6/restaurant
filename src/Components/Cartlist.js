@@ -8,7 +8,6 @@ import MenuHook from "../Hooks/menuHook";
 
 const Cartlist = () => {
   const { cartlistData } = CartlistHook(`http://localhost:3001/cart_list`);
-  //const { categoryData } = CategoryHook(`http://localhost:3001/category`);
   const { menuData } = MenuHook(`http://localhost:3001/menu`);
 
   const [joinedList, setjoinedList] = useState([]);
