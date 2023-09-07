@@ -9,9 +9,9 @@ import CategoryHome from "../Slice/CategoryHome";
 const Home = () => {
   const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
   const { descriptionData } = DescriptionHook(
-    `http://localhost:3001/description`
+    `https://prasunbd6.github.io/restaurentApi/description.json`
   );
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu`);
 
   const [loading, setLoading] = useState(false); // Set Animation
   
