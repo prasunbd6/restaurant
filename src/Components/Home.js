@@ -7,7 +7,7 @@ import FilteredHome from "../Slice/FilteredHome";
 import CategoryHome from "../Slice/CategoryHome";
 
 const Home = () => {
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
   const { descriptionData } = DescriptionHook(
     `http://localhost:3001/description`
   );
