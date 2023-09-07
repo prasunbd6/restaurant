@@ -11,7 +11,7 @@ const Home = () => {
   const { descriptionData } = DescriptionHook(
     `https://prasunbd6.github.io/restaurentApi/description.json`
   );
-  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
 
   const [loading, setLoading] = useState(false); // Set Animation
   
