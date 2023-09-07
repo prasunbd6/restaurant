@@ -8,7 +8,7 @@ const Header = () => {
   // get all api data of Cart_list
   const apiData = () => {
     axios
-      .get("http://localhost:3001/cart_list")
+      .get("https://prasunbd6.github.io/restaurentApi/cart_list.json")
       .then((response) => {
        
       })

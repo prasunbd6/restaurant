@@ -9,8 +9,8 @@ import DescriptionHook from "../../Hooks/descriptionHook";
 const Edititem = () => {
 
   
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
-  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
 
 
   const { id } = useParams();
@@ -22,7 +22,7 @@ const Edititem = () => {
   // Show Data From Menu
   const menu = () => {
     axios
-      .get(`http://localhost:3001/menu/${id}`) // Here "menu" is data table
+      .get(`https://prasunbd6.github.io/restaurentApi/menu.json/${id}`) // Here "menu" is data table
       .then((response) => {
         setMenuTable(response.data);
       })
@@ -42,7 +42,7 @@ const Edititem = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3001/menu/${id}`,menuTable) // Here "entry" is data table
+      .put(`https://prasunbd6.github.io/restaurentApi/menu.json/${id}`,menuTable) // Here "entry" is data table
       .then((response) => {
         // handle success
         navigate("/admindashboard");

@@ -7,8 +7,8 @@ import CartlistHook from "../Hooks/cartlistHook";
 import MenuHook from "../Hooks/menuHook";
 
 const Cartlist = () => {
-  const { cartlistData } = CartlistHook(`http://localhost:3001/cart_list`);
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+  const { cartlistData } = CartlistHook(`https://prasunbd6.github.io/restaurentApi/cart_list.json`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
 
   const [joinedList, setjoinedList] = useState([]);
 
@@ -32,7 +32,7 @@ const Cartlist = () => {
   // Cart list data delete by id
   function handleDelete(id) {
     axios
-      .delete(`http://localhost:3001/cart_list/${id}`)
+      .delete(`https://prasunbd6.github.io/restaurentApi/cart_list.json/${id}`)
       .then(() => {
         window.location.reload();
         cartlistData();

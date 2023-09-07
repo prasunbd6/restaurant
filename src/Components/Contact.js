@@ -4,9 +4,9 @@ import CategoryHook from "../Hooks/categoryHook";
 import DescriptionHook from "../Hooks/descriptionHook";
 
 const Contact = () => {
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
-  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
 
   const [filter, setFilter] = useState([]);
 

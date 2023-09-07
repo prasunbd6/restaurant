@@ -7,9 +7,9 @@ import DescriptionHook from "../Hooks/descriptionHook";
 
 const Test = () => {
   const [filter, setFilter] = useState([]);
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
-  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
+  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
 
 
   const joinTable = menuData.map(menuData => {

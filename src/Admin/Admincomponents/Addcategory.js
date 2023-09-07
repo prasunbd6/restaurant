@@ -10,7 +10,7 @@ import CategoryHook from "../../Hooks/categoryHook";
 const Addcategory = () => {
   const navigate = useNavigate();
   //const randomId = uuidv4();
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
   const [loading, setLoading] = useState(false); // Set Animation
 
   const [inputCategory, setInputCategory] = useState({id:"",name: ""});
@@ -26,7 +26,7 @@ const Addcategory = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/category", inputCategory)
+      .post("https://prasunbd6.github.io/restaurentApi/category.json", inputCategory)
       .then(() => {
         navigate("/admindashboard");
       })
@@ -47,7 +47,7 @@ const Addcategory = () => {
   // Category list data delete by id
   const handelDelete = (id) => {
     axios
-      .delete(`http://localhost:3001/category/${id}`)
+      .delete(`https://prasunbd6.github.io/restaurentApi/category.json/${id}`)
       .then(() => {
         navigate("/admindashboard");
         //window.location.reload(); // Reload the page

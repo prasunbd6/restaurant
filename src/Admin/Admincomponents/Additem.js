@@ -10,9 +10,9 @@ import DescriptionHook from "../../Hooks/descriptionHook";
 import AddItemAdmin from "../../Slice/AddItemAdmin";
 
 const Additem = () => {
-  const { categoryData } = CategoryHook(`http://localhost:3001/category`);
-  const { descriptionData } = DescriptionHook(`http://localhost:3001/description`);
-  const { menuData } = MenuHook(`http://localhost:3001/menu`);
+  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
+  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
   
   const [mergeTable, setMergeTable] = useState([]);
   const [entry, setEntry] = useState({title: "",cat_id: "",price: "",img: "",des_id: ""});
@@ -24,7 +24,7 @@ const Additem = () => {
   // Menu list data delete by id
   const handelDelete = (id) => {
     axios
-      .delete(`http://localhost:3001/menu/${id}`)
+      .delete(`https://prasunbd6.github.io/restaurentApi/menu.json/${id}`)
       .then(() => {
         navigate("/admindashboard");
       })
@@ -35,7 +35,7 @@ const Additem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/menu", entry)
+      .post("https://prasunbd6.github.io/restaurentApi/menu.json", entry)
       .then(() => {
         navigate("/admindashboard");
       })

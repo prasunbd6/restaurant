@@ -11,7 +11,7 @@ const Editcategory = () => {
   // Individual Data by ID
   const category=()=>{
     axios
-    .get(`http://localhost:3001/category/${id}`) // Here "category" is data table
+    .get(`https://prasunbd6.github.io/restaurentApi/category.json/${id}`) // Here "category" is data table
     .then((response) => {
       setCategoryTable(response.data);
     })
@@ -28,7 +28,7 @@ const Editcategory = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3001/category/${id}`, categoryTable) // Here "entry" is data table
+      .put(`https://prasunbd6.github.io/restaurentApi/category.json/${id}`, categoryTable) // Here "entry" is data table
       .then((response) => {
         // handle success
         navigate("/admindashboard");
