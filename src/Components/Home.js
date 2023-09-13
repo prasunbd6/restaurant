@@ -7,11 +7,11 @@ import FilteredHome from "../Slice/FilteredHome";
 import CategoryHome from "../Slice/CategoryHome";
 
 const Home = () => {
-  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { categoryData } = CategoryHook(`https://restaurent1942.onrender.com/category`);
   const { descriptionData } = DescriptionHook(
-    `https://prasunbd6.github.io/restaurentApi/description.json`
+    `https://restaurent1942.onrender.com/description`
   );
-  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
+  const { menuData } = MenuHook(`https://restaurent1942.onrender.com/menu`);
 
   const [loading, setLoading] = useState(false); // Set Animation
   

@@ -10,7 +10,7 @@ import CategoryHook from "../../Hooks/categoryHook";
 const Addcategory = () => {
   const navigate = useNavigate();
   //const randomId = uuidv4();
-  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
+  const { categoryData } = CategoryHook(`https://restaurent1942.onrender.com/category`);
   const [loading, setLoading] = useState(false); // Set Animation
 
   const [inputCategory, setInputCategory] = useState({id:"",name: ""});
@@ -26,7 +26,7 @@ const Addcategory = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://prasunbd6.github.io/restaurentApi/category.json", inputCategory)
+      .post("https://restaurent1942.onrender.com/category", inputCategory)
       .then(() => {
         navigate("/admindashboard");
       })
@@ -47,7 +47,7 @@ const Addcategory = () => {
   // Category list data delete by id
   const handelDelete = (id) => {
     axios
-      .delete(`https://prasunbd6.github.io/restaurentApi/category.json/${id}`)
+      .delete(`https://restaurent1942.onrender.com/category/${id}`)
       .then(() => {
         navigate("/admindashboard");
         //window.location.reload(); // Reload the page

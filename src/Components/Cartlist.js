@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 import { ImBin, ImList2 } from "react-icons/im";
 import CartlistHook from "../Hooks/cartlistHook";
-//import CategoryHook from "../Hooks/categoryHook";
+
 
 import MenuHook from "../Hooks/menuHook";
 
 const Cartlist = () => {
-  const { cartlistData } = CartlistHook(`https://prasunbd6.github.io/restaurentApi/cart_list.json`);
-  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
+  const { cartlistData } = CartlistHook(`https://restaurent1942.onrender.com/cart_list`);
+  const { menuData } = MenuHook(`https://restaurent1942.onrender.com/menu`);
 
   const [joinedList, setjoinedList] = useState([]);
 
@@ -29,13 +30,16 @@ const Cartlist = () => {
     setjoinedList(joinTable);
   };
 
+  const navigate=useNavigate();
+
   // Cart list data delete by id
   function handleDelete(id) {
     axios
-      .delete(`https://prasunbd6.github.io/restaurentApi/cart_list.json/${id}`)
+      .delete(`https://restaurent1942.onrender.com/cart_list/${id}`)
       .then(() => {
-        window.location.reload();
-        cartlistData();
+        navigate("/")
+        //window.location.reload();
+        //cartlistData();
       })
       .catch((err) => console.log(err));
   }

@@ -10,7 +10,7 @@ const Editdescription = () => {
     // Individual Data by ID
     const description=()=>{
       axios
-      .get(`https://prasunbd6.github.io/restaurentApi/description.json/${id}`) // Here "description" is data table
+      .get(`https://restaurent1942.onrender.com/description/${id}`) // Here "description" is data table
       .then((response) => {
         setDescriptionTable(response.data);
       })
@@ -27,7 +27,7 @@ const Editdescription = () => {
     const handleUpdate = (e) => {
       e.preventDefault();
       axios
-        .put(`https://prasunbd6.github.io/restaurentApi/description.json/${id}`, descriptionTable) // Here "entry" is data table
+        .put(`https://restaurent1942.onrender.com/description/${id}`, descriptionTable) // Here "entry" is data table
         .then((response) => {
           // handle success
           navigate("/admindashboard");

@@ -21,7 +21,7 @@ const Order = () => {
     e.preventDefault();
     //const randomId = uuidv4();
     axios
-      .post(`https://prasunbd6.github.io/restaurentApi/cart_list.json`, {
+      .post(`https://restaurent1942.onrender.com/cart_list`, {
         //  id:randomId,
         menu_id: menu.id,
         quantity: entry.quantity,
@@ -38,7 +38,7 @@ const Order = () => {
   // Individual Data from Menu table by ID
   const getMenu = () => {
     axios
-      .get(`https://prasunbd6.github.io/restaurentApi/menu.json/${id}`) // Here "menu" is data table
+      .get(`https://restaurent1942.onrender.com/menu/${id}`) // Here "menu" is data table
       .then((response) => {
         setMenu(response.data);
       })

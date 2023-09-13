@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 
 const Adddescription = () => {
-  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
+  const { descriptionData } = DescriptionHook(`https://restaurent1942.onrender.com/description`);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [description, setDescription] = useState({details:""});
@@ -23,7 +23,7 @@ const Adddescription = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`https://prasunbd6.github.io/restaurentApi/description.json`, { details: description })
+      .post(`https://restaurent1942.onrender.com/description`, { details: description })
       .then(() => {
         navigate("/admindashboard");
       })
@@ -35,7 +35,7 @@ const Adddescription = () => {
   // Category list data delete by id
   const handelDelete = (id) => {
     axios
-      .delete(`https://prasunbd6.github.io/restaurentApi/description.json/${id}`)
+      .delete(`https://restaurent1942.onrender.com/description/${id}`)
       .then(() => {
         navigate("/admindashboard");
       })

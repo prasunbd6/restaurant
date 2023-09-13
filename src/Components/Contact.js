@@ -4,9 +4,9 @@ import CategoryHook from "../Hooks/categoryHook";
 import DescriptionHook from "../Hooks/descriptionHook";
 
 const Contact = () => {
-  const { menuData } = MenuHook(`https://prasunbd6.github.io/restaurentApi/menu.json`);
-  const { categoryData } = CategoryHook(`https://prasunbd6.github.io/restaurentApi/category.json`);
-  const { descriptionData } = DescriptionHook(`https://prasunbd6.github.io/restaurentApi/description.json`);
+  const { menuData } = MenuHook(`https://restaurent1942.onrender.com/menu`);
+  const { categoryData } = CategoryHook(`https://restaurent1942.onrender.com/category`);
+  const { descriptionData } = DescriptionHook(`https://restaurent1942.onrender.com/description`);
 
   const [filter, setFilter] = useState([]);
 
